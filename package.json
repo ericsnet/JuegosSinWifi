@@ -1,0 +1,21 @@
+{
+  "name": "juegos-sin-wifi",
+  "version": "1.0.0",
+  "description": "Portal de juegos arcade offline y online con guardado local y en la nube de GitHub",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve -l 8080 -s .",
+    "dev": "npx serve -l 8080 -s ."
+  },
+  "keywords": [
+    "games",
+    "offline-games",
+    "pwa",
+    "github-cloud-save",
+    "arcade",
+    "juegos-sin-wifi",
+    "html5-games"
+  ],
+  "author": "Pickeric",
+  "license": "MIT"
+}
