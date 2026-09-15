@@ -2,40 +2,50 @@
  * Responsive Styles for Mobile, Tablet & Touch Screens
  */
 
+@media (max-width: 900px) {
+    .hero-spotlight-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 768px) {
     .container {
-        padding: 0 12px;
+        padding: 0 16px;
     }
 
     .app-header {
-        padding: 8px 0;
+        padding: 10px 0;
     }
 
-    .brand-text h1 {
-        font-size: 1.15rem;
+    .brand-title {
+        font-size: 1.25rem;
     }
 
-    .brand-subtitle {
+    .brand-badge {
         display: none;
     }
 
-    .hero-card {
+    .hero-main-card {
+        padding: 24px 20px;
+    }
+
+    .hero-heading {
+        font-size: 1.75rem;
+    }
+
+    .hero-paragraph {
+        font-size: 0.9rem;
+        max-width: 100%;
+    }
+
+    .toolbar-top-row {
         flex-direction: column;
         align-items: stretch;
-        padding: 18px;
-    }
-
-    .hero-title {
-        font-size: 1.4rem;
-    }
-
-    .hero-right-actions {
-        width: 100%;
     }
 
     .games-grid {
         grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-        gap: 14px;
+        gap: 16px;
     }
 
     .game-viewport-modal .modal-dialog {
@@ -46,20 +56,20 @@
     }
 
     .viewport-toolbar {
-        padding: 8px 12px;
+        padding: 10px 14px;
     }
 
     .game-render-area {
-        padding: 6px;
+        padding: 8px;
     }
 
     canvas {
-        max-height: 50vh;
+        max-height: 48vh;
     }
 
     .tetris-layout {
         flex-direction: column;
-        gap: 8px;
+        gap: 10px;
     }
 
     .tetris-side-panel {
@@ -72,14 +82,14 @@
     }
 
     .g2048-board {
-        grid-template-columns: repeat(4, 55px);
-        grid-template-rows: repeat(4, 55px);
-        padding: 8px;
-        gap: 6px;
+        grid-template-columns: repeat(4, 56px);
+        grid-template-rows: repeat(4, 56px);
+        padding: 10px;
+        gap: 8px;
     }
 
     .g2048-cell {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
 
     .sudoku-grid {
@@ -88,34 +98,35 @@
     }
 
     .sudoku-cell {
-        font-size: 1rem;
+        font-size: 1.05rem;
     }
 
     .c4-col-selectors, .c4-grid {
-        grid-template-columns: repeat(7, 36px);
+        grid-template-columns: repeat(7, 38px);
     }
 
     .c4-grid {
-        grid-template-rows: repeat(6, 36px);
-        gap: 4px;
-        padding: 6px;
+        grid-template-rows: repeat(6, 38px);
+        gap: 6px;
+        padding: 8px;
     }
 
     .sol-card-slot, .sol-card {
-        width: 44px;
-        height: 64px;
+        width: 46px;
+        height: 68px;
     }
 
     .sol-card-front {
-        font-size: 0.6rem;
+        font-size: 0.65rem;
+        padding: 3px;
     }
 
     .sol-tab-col {
-        min-height: 220px;
+        min-height: 240px;
     }
 
     .sol-tableau-row {
-        gap: 4px;
+        gap: 6px;
     }
 
     .avatar-picker-grid {
@@ -125,5 +136,10 @@
     .footer-inner {
         flex-direction: column;
         text-align: center;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }

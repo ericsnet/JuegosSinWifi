@@ -2,16 +2,16 @@
  * Main Application Hub & Router for JuegosSinWifi
  */
 document.addEventListener('DOMContentLoaded', () => {
-    // 14 Games Definition
+    // 14 Games Definition with rich tags, gradients and metadata
     const GAMES_CATALOG = [
         {
             id: 'snake',
             title: 'Cyber Snake Neon',
             genre: 'arcade',
-            genreLabel: 'Arcade & Acción',
+            genreLabel: 'Arcade',
             icon: '🐍',
-            color: '#00ff88',
-            desc: 'La serpiente clásica reinventada con gráficos neón, manzanas doradas y velocidad creciente.',
+            color: '#10b981',
+            desc: 'La serpiente clásica reinventada con estelas brillantes, manzanas doradas y aceleración progresiva.',
             controls: 'Teclas Flechas / WASD o Deslizar en pantalla táctil.',
             classRef: window.CyberSnake
         },
@@ -19,10 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 'tetris',
             title: 'TetroBlocks Neon',
             genre: 'puzzle',
-            genreLabel: 'Puzzles & Lógica',
+            genreLabel: 'Puzzle',
             icon: '🧱',
             color: '#00f0ff',
-            desc: 'El legendario juego de encajar bloques con función Guardar pieza, sombra fantasma y combos.',
+            desc: 'El legendario juego de encajar bloques con función Guardar pieza (Hold), sombra fantasma y combos.',
             controls: '◄ ► Mover, ▲ Rotar, ▼ Bajar, Espacio Caída rápida, C Guardar pieza.',
             classRef: window.NeonTetris
         },
@@ -30,9 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 'space',
             title: 'Space Defender',
             genre: 'arcade',
-            genreLabel: 'Arcade & Acción',
+            genreLabel: 'Shooter',
             icon: '🛸',
-            color: '#ff0055',
+            color: '#ec4899',
             desc: 'Shooter espacial retro. Destruye oleadas de invasores alienígenas, recoge power-ups y vence a los jefes.',
             controls: '◄ ► Mover nave, Espacio / Fuego Disparar.',
             classRef: window.SpaceDefender
@@ -41,10 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 'flappy',
             title: 'Flappy Cyber',
             genre: 'arcade',
-            genreLabel: 'Arcade & Acción',
+            genreLabel: 'Arcade',
             icon: '🪽',
-            color: '#ff007f',
-            desc: 'Pilota un drone futurista a través de barreras láser flotantes.',
+            color: '#f43f5e',
+            desc: 'Pilota un drone futurista a través de barreras láser flotantes con físicas de impulso.',
             controls: 'Toca la pantalla, Clic o pulsa Espacio para dar propulsión.',
             classRef: window.FlappyCyber
         },
@@ -52,9 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 'game2048',
             title: '2048 Fusion',
             genre: 'puzzle',
-            genreLabel: 'Puzzles & Lógica',
+            genreLabel: 'Lógica',
             icon: '🔢',
-            color: '#ffd700',
+            color: '#f59e0b',
             desc: 'Desliza y fusiona números idénticos para alcanzar la mítica ficha 2048. ¡Incluye botón Deshacer!',
             controls: 'Flechas / Deslizar en pantalla.',
             classRef: window.Game2048
@@ -63,10 +63,10 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 'minesweeper',
             title: 'Buscaminas Deluxe',
             genre: 'puzzle',
-            genreLabel: 'Puzzles & Lógica',
+            genreLabel: 'Clásico',
             icon: '💣',
-            color: '#ffaa00',
-            desc: 'Despeja el campo minado usando lógica y números. Primer clic siempre seguro.',
+            color: '#fb923c',
+            desc: 'Despeja el campo minado usando lógica y números. Primer clic siempre seguro garantizado.',
             controls: 'Clic para revelar, Clic derecho o botón Bandera para marcar minas.',
             classRef: window.Minesweeper
         },
@@ -74,10 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 'memory',
             title: 'Memory Matrix',
             genre: 'puzzle',
-            genreLabel: 'Puzzles & Lógica',
+            genreLabel: 'Memoria',
             icon: '🧠',
-            color: '#bf00ff',
-            desc: 'Encuentra todas las parejas de cartas en el menor número de movimientos posible.',
+            color: '#a855f7',
+            desc: 'Encuentra todas las parejas de cartas en el menor número de movimientos y tiempo posible.',
             controls: 'Clic o Toca las cartas para voltearlas.',
             classRef: window.MemoryMatrix
         },
@@ -85,10 +85,10 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 'sudoku',
             title: 'Sudoku Master',
             genre: 'puzzle',
-            genreLabel: 'Puzzles & Lógica',
+            genreLabel: 'Lógica',
             icon: '🧩',
-            color: '#00d2ff',
-            desc: 'Desafíos diarios de Sudoku con 4 dificultades, notas a lápiz y sistema de pistas.',
+            color: '#06b6d4',
+            desc: 'Desafíos de Sudoku con 4 dificultades, notas a lápiz, validación y sistema de pistas.',
             controls: 'Selecciona casilla y pulsa un número del 1 al 9.',
             classRef: window.SudokuMaster
         },
@@ -96,10 +96,10 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 'connect4',
             title: 'Conecta 4 Neón',
             genre: 'strategy',
-            genreLabel: 'Estrategia & Cartas',
+            genreLabel: 'Estrategia',
             icon: '🔴',
-            color: '#ff3366',
-            desc: 'Alinea 4 fichas en raya antes que tu rival. Juega contra la IA o contra un amigo en local.',
+            color: '#f43f5e',
+            desc: 'Alinea 4 fichas en raya. Juega contra la IA (algoritmo Minimax) o contra un amigo en local.',
             controls: 'Toca la columna deseada para soltar la ficha.',
             classRef: window.ConnectFour
         },
@@ -107,10 +107,10 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 'hangman',
             title: 'El Ahorcado Pro',
             genre: 'words',
-            genreLabel: 'Palabras & Reflejos',
+            genreLabel: 'Palabras',
             icon: '📜',
-            color: '#00ffaa',
-            desc: 'Adivina palabras en español de videojuegos, países, cine, ciencia y animales.',
+            color: '#10b981',
+            desc: 'Adivina cientos de palabras en español clasificadas por categorías con teclado interactivo.',
             controls: 'Toca las letras del teclado virtual o pulsa las teclas de tu teclado.',
             classRef: window.HangmanGame
         },
@@ -118,20 +118,20 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 'pong',
             title: 'Cyber Pong',
             genre: 'arcade',
-            genreLabel: 'Arcade & Acción',
+            genreLabel: 'Deportes',
             icon: '🏓',
             color: '#00f0ff',
-            desc: 'El clásico duelo de tenis de mesa arcade con físicas de efecto y modo 1P / 2P.',
-            controls: 'P1: W/S o Arrastre | P2: Flechas Arriba/Abajo.',
+            desc: 'El clásico duelo de tenis de mesa arcade con físicas de efecto y modo 1P vs IA o 2P local.',
+            controls: 'P1: W/S o Arrastre táctil | P2: Flechas Arriba/Abajo.',
             classRef: window.CyberPong
         },
         {
             id: 'runner',
             title: 'Neon Dino Runner',
             genre: 'arcade',
-            genreLabel: 'Arcade & Acción',
+            genreLabel: 'Runner',
             icon: '🦖',
-            color: '#00ff88',
+            color: '#34d399',
             desc: 'Corre sin parar por el desierto ciberpunk saltando obstáculos y agachándote bajo los drones.',
             controls: 'Espacio / ▲ Saltar, ▼ Agacharse.',
             classRef: window.DinoRunner
@@ -140,9 +140,9 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 'typing',
             title: 'Speed Typer',
             genre: 'words',
-            genreLabel: 'Palabras & Reflejos',
+            genreLabel: 'Reflejos',
             icon: '⚡',
-            color: '#ffd700',
+            color: '#f59e0b',
             desc: 'Escribe a toda velocidad las palabras que caen del cielo para destruir sus proyectiles.',
             controls: 'Escribe las palabras con tu teclado antes de que toquen el suelo.',
             classRef: window.SpeedTyper
@@ -151,10 +151,10 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 'solitaire',
             title: 'Solitario Klondike',
             genre: 'strategy',
-            genreLabel: 'Estrategia & Cartas',
+            genreLabel: 'Cartas',
             icon: '🃏',
-            color: '#ff5500',
-            desc: 'El rey de los solitarios de cartas. Modo Robar 1 o 3, auto-completar y deshacer.',
+            color: '#f97316',
+            desc: 'El rey de los solitarios de cartas. Modo Robar 1 o 3, auto-completar, clics directos y deshacer.',
             controls: 'Clic o Toca una carta para enviarla automáticamente a su lugar válido.',
             classRef: window.SolitaireKlondike
         }
@@ -163,11 +163,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentActiveGame = null;
     let currentFilter = 'all';
     let searchQuery = '';
+    let featuredGameId = 'snake';
 
     // DOM Elements
     const gamesGrid = document.getElementById('games-grid');
     const searchInput = document.getElementById('search-games-input');
-    const filterTabs = document.querySelectorAll('.category-tab');
+    const filterTabs = document.querySelectorAll('.filter-chip');
     
     // Modal Viewport elements
     const gameModal = document.getElementById('game-viewport-modal');
@@ -196,12 +197,40 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnExportSave = document.getElementById('btn-export-save');
     const btnImportSave = document.getElementById('btn-import-save');
     const fileImportInput = document.getElementById('file-import-input');
+    const btnHeroPlayFeatured = document.getElementById('btn-hero-play-featured');
+    const btnHeroRandom = document.getElementById('btn-hero-random');
+    const btnToolbarRandom = document.getElementById('btn-toolbar-random');
 
-    // Render Hub & Profile initial
+    // Initialize Hub
+    pickRandomFeatured();
     window.profile?.renderHubProfile();
+    updateQuickStats();
     renderGamesCatalog();
     updateAudioButtons();
     updateCloudStatusBadge();
+
+    function pickRandomFeatured() {
+        const feat = GAMES_CATALOG[Math.floor(Math.random() * GAMES_CATALOG.length)];
+        featuredGameId = feat.id;
+        const tag = document.getElementById('spotlight-title-tag');
+        if (tag) tag.textContent = feat.title;
+    }
+
+    function updateQuickStats() {
+        const data = window.storage.data;
+        const statGamesPlayed = document.getElementById('stat-games-played');
+        const statAch = document.getElementById('stat-achievements-count');
+        const statLvl = document.getElementById('stat-player-level');
+        const favCount = document.getElementById('fav-filter-count');
+
+        if (statGamesPlayed) statGamesPlayed.textContent = data.profile.gamesPlayed || 0;
+        if (statAch) {
+            const unlocked = Object.keys(data.achievements || {}).length;
+            statAch.textContent = `${unlocked}/17`;
+        }
+        if (statLvl) statLvl.textContent = `Niv. ${data.profile.level || 1}`;
+        if (favCount) favCount.textContent = (data.favorites || []).length;
+    }
 
     // ==========================================
     // CATALOG RENDERING & FILTERING
@@ -212,7 +241,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const filtered = GAMES_CATALOG.filter(game => {
             const matchesSearch = game.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                                  game.desc.toLowerCase().includes(searchQuery.toLowerCase());
+                                  game.desc.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                                  game.genreLabel.toLowerCase().includes(searchQuery.toLowerCase());
             if (!matchesSearch) return false;
 
             if (currentFilter === 'all') return true;
@@ -227,9 +257,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (filtered.length === 0) {
             gamesGrid.innerHTML = `
                 <div class="empty-state">
-                    <span class="empty-icon">🔍</span>
+                    <span class="empty-state-icon">🔍</span>
                     <h3>No se encontraron juegos</h3>
-                    <p>Prueba con otra búsqueda o selecciona una categoría diferente.</p>
+                    <p>Prueba con otra palabra clave o selecciona otra categoría.</p>
                 </div>
             `;
             return;
@@ -241,43 +271,44 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = document.createElement('div');
             card.className = 'game-card';
             card.dataset.gameId = game.id;
+            card.style.setProperty('--card-accent', game.color);
 
             card.innerHTML = `
-                <div class="card-glow" style="--accent: ${game.color};"></div>
-                <button class="btn-fav ${isFav ? 'is-fav' : ''}" title="Marcar como favorito" data-fav-id="${game.id}">
+                <div class="card-accent-bar"></div>
+                <button class="btn-card-fav ${isFav ? 'is-fav' : ''}" title="Marcar como favorito" data-fav-id="${game.id}">
                     ${isFav ? '★' : '☆'}
                 </button>
-                <div class="card-icon-wrapper" style="--accent: ${game.color};">
-                    <span class="card-game-icon">${game.icon}</span>
+                <div class="card-banner-art">
+                    <span class="card-art-emoji">${game.icon}</span>
                 </div>
-                <div class="card-body">
-                    <div class="card-meta">
-                        <span class="genre-badge">${game.genreLabel}</span>
-                        <span class="score-badge">🏆 ${score}</span>
+                <div class="card-content">
+                    <div class="card-tags-row">
+                        <span class="genre-tag">${game.genreLabel}</span>
+                        <span class="score-tag">🏆 <span>${score}</span></span>
                     </div>
                     <h3 class="card-title">${game.title}</h3>
-                    <p class="card-desc">${game.desc}</p>
-                </div>
-                <div class="card-footer">
-                    <button class="btn btn-play" data-play-id="${game.id}">
-                        <span>JUGAR AHORA</span>
-                        <span class="play-arrow">▶</span>
-                    </button>
+                    <p class="card-description">${game.desc}</p>
+                    <div class="card-action-bar">
+                        <button class="btn-play-action" data-play-id="${game.id}">
+                            <span>JUGAR AHORA</span>
+                            <span class="play-arrow-icon">▶</span>
+                        </button>
+                    </div>
                 </div>
             `;
 
-            // Card Play event
-            card.querySelector('.btn-play').onclick = (e) => {
+            // Click bindings
+            card.querySelector('.btn-play-action').onclick = (e) => {
                 e.stopPropagation();
                 launchGame(game.id);
             };
             card.onclick = () => launchGame(game.id);
 
-            // Fav event
-            card.querySelector('.btn-fav').onclick = (e) => {
+            card.querySelector('.btn-card-fav').onclick = (e) => {
                 e.stopPropagation();
-                const nowFav = window.storage.toggleFavorite(game.id);
+                window.storage.toggleFavorite(game.id);
                 renderGamesCatalog();
+                updateQuickStats();
                 window.sound?.play('select');
             };
 
@@ -285,7 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Filter Tabs
+    // Filter Chips
     filterTabs.forEach(tab => {
         tab.onclick = () => {
             filterTabs.forEach(t => t.classList.remove('active'));
@@ -304,6 +335,16 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
 
+    // Random Game Launches
+    const playRandomGame = () => {
+        const randomGame = GAMES_CATALOG[Math.floor(Math.random() * GAMES_CATALOG.length)];
+        launchGame(randomGame.id);
+    };
+
+    if (btnHeroRandom) btnHeroRandom.onclick = playRandomGame;
+    if (btnToolbarRandom) btnToolbarRandom.onclick = playRandomGame;
+    if (btnHeroPlayFeatured) btnHeroPlayFeatured.onclick = () => launchGame(featuredGameId);
+
     // ==========================================
     // GAME LAUNCHER & MODAL VIEWPORT
     // ==========================================
@@ -319,6 +360,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         modalGameTitle.textContent = gameMeta.title;
         modalGameGenre.textContent = gameMeta.genreLabel;
+        modalGameGenre.style.color = gameMeta.color;
         gameContainer.innerHTML = '';
 
         gameModal.classList.remove('hidden');
@@ -345,6 +387,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.remove('modal-open');
         renderGamesCatalog();
         window.profile?.renderHubProfile();
+        updateQuickStats();
         window.achievements?.checkAll();
     }
 
@@ -384,11 +427,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (btnGlobalSound) {
             btnGlobalSound.classList.toggle('active', sfxOn);
-            btnGlobalSound.innerHTML = sfxOn ? '🔊 Efectos: ON' : '🔇 Efectos: OFF';
+            btnGlobalSound.innerHTML = sfxOn ? '🔊' : '🔇';
         }
         if (btnGlobalMusic) {
             btnGlobalMusic.classList.toggle('active', musicOn);
-            btnGlobalMusic.innerHTML = musicOn ? '🎵 Música: ON' : '🎵 Música: OFF';
+            btnGlobalMusic.innerHTML = musicOn ? '🎵' : '🎼';
         }
         if (btnSoundToggle) {
             btnSoundToggle.innerHTML = sfxOn ? '🔊' : '🔇';
@@ -431,7 +474,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const dateStr = new Date(lastSync).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
             badge.innerHTML = `<span class="status-dot green"></span> Nube: Sincronizado (${dateStr})`;
         } else if (window.storage.getGitHubToken()) {
-            badge.innerHTML = `<span class="status-dot orange"></span> Nube: Conectado (Sin sincronizar)`;
+            badge.innerHTML = `<span class="status-dot orange"></span> Nube: Conectado`;
         } else {
             badge.innerHTML = `<span class="status-dot gray"></span> Nube: No conectado`;
         }
@@ -448,23 +491,25 @@ document.addEventListener('DOMContentLoaded', () => {
         const infoEl = document.getElementById('cloud-account-info');
         if (token) {
             infoEl.innerHTML = `
-                <div class="cloud-connected-card">
-                    <div class="cloud-user-header">
-                        <span class="cloud-icon">☁️</span>
+                <div style="background: rgba(0, 240, 255, 0.06); border: 1px solid rgba(0, 240, 255, 0.2); padding: 16px; border-radius: 12px; margin-bottom: 12px;">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+                        <span style="font-size: 1.8rem;">☁️</span>
                         <div>
-                            <strong>GitHub Cloud Sync Activado</strong>
-                            <p class="text-muted">Gist ID: <code>${gistId || 'Se creará en la primera sincronización'}</code></p>
+                            <strong style="color: #fff; font-size: 1rem;">GitHub Cloud Sync Vinculado</strong>
+                            <p style="color: var(--text-secondary); font-size: 0.8rem; margin: 0;">Gist ID: <code>${gistId || 'Se creará en tu primera subida'}</code></p>
                         </div>
                     </div>
-                    <div class="cloud-sync-meta">
-                        <span>Última sincronización: <strong>${lastSync ? new Date(lastSync).toLocaleString() : 'Nunca'}</strong></span>
+                    <div style="font-size: 0.8rem; color: var(--cyan);">
+                        Última sincronización: <strong>${lastSync ? new Date(lastSync).toLocaleString() : 'Pendiente'}</strong>
                     </div>
                 </div>
             `;
         } else {
             infoEl.innerHTML = `
-                <div class="cloud-disconnected-card">
-                    <p>Conecta tu cuenta de GitHub con un <strong>Personal Access Token</strong> (permiso <code>gist</code>) para sincronizar tus partidas, récords y logros automáticamente en cualquier dispositivo.</p>
+                <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); padding: 16px; border-radius: 12px; margin-bottom: 12px;">
+                    <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.5; margin: 0;">
+                        Conecta tu cuenta de GitHub con un <strong>Personal Access Token</strong> (permiso <code>gist</code>) para sincronizar tus partidas, récords y logros automáticamente en cualquier dispositivo.
+                    </p>
                 </div>
             `;
         }
@@ -481,7 +526,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!cloudStatusMsg) return;
         cloudStatusMsg.className = `alert ${isError ? 'alert-danger' : 'alert-success'}`;
         cloudStatusMsg.textContent = text;
-        cloudStatusMsg.style.display = 'block';
+        cloudStatusMsg.style.display = 'flex';
     }
 
     if (btnSaveToken) {
@@ -554,6 +599,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 renderGamesCatalog();
                 window.profile?.renderHubProfile();
                 updateCloudStatusBadge();
+                updateQuickStats();
                 window.achievements?.checkAll();
             } catch (err) {
                 showCloudMessage(`Error al descargar: ${err.message}`, true);
@@ -589,9 +635,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!file) return;
             try {
                 await window.storage.importFromJsonFile(file);
-                alert('¡Partida restaurada con éxito desde el archivo!');
+                alert('¡Partida restaurada con éxito desde el archivo JSON!');
                 renderGamesCatalog();
                 window.profile?.renderHubProfile();
+                updateQuickStats();
                 window.achievements?.checkAll();
                 window.sound?.play('victory');
             } catch (err) {
@@ -724,14 +771,15 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Listen for level-up / save events
-    window.addEventListener('jsw_levelup', (e) => {
+    window.addEventListener('jsw_levelup', () => {
         window.profile?.renderHubProfile();
+        updateQuickStats();
     });
 
     // PWA Offline installation & Service Worker Registration
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('./sw.js')
-            .then(reg => console.log('Service Worker registrado con éxito (PWA Offline listo):', reg.scope))
-            .catch(err => console.warn('Error registrando Service Worker:', err));
+            .then(reg => console.log('Service Worker PWA Offline listo:', reg.scope))
+            .catch(err => console.warn('SW Error:', err));
     }
 });

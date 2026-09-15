@@ -1,14 +1,14 @@
 /**
  * Web Audio API Sound Synthesizer
- * 100% offline - No external audio files needed!
+ * 100% offline - Smooth, polyphonic arcade synthesizers
  */
 class SoundEngine {
     constructor() {
         this.ctx = null;
         this.sfxEnabled = true;
         this.musicEnabled = false;
-        this.sfxVolume = 0.5;
-        this.musicVolume = 0.25;
+        this.sfxVolume = 0.45;
+        this.musicVolume = 0.2;
         this.musicInterval = null;
         this.musicStep = 0;
         
@@ -18,7 +18,7 @@ class SoundEngine {
         const savedMusic = localStorage.getItem('jsw_music_enabled');
         if (savedMusic !== null) this.musicEnabled = savedMusic === 'true';
 
-        // Initialize audio context on first interaction
+        // Unlock AudioContext on first user interaction
         const initAudio = () => {
             this.ensureContext();
             window.removeEventListener('click', initAudio);
@@ -67,7 +67,7 @@ class SoundEngine {
         return this.musicEnabled;
     }
 
-    playTone(freq, type = 'sine', duration = 0.1, gain = 0.3, slideTo = null) {
+    playTone(freq, type = 'sine', duration = 0.1, gain = 0.25, slideTo = null) {
         if (!this.sfxEnabled) return;
         this.ensureContext();
         if (!this.ctx) return;
@@ -75,6 +75,10 @@ class SoundEngine {
         try {
             const osc = this.ctx.createOscillator();
             const gainNode = this.ctx.createGain();
+            const filter = this.ctx.createBiquadFilter();
+
+            filter.type = 'lowpass';
+            filter.frequency.setValueAtTime(3000, this.ctx.currentTime);
 
             osc.type = type;
             osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
@@ -83,16 +87,18 @@ class SoundEngine {
             }
 
             const masterGain = gain * this.sfxVolume;
-            gainNode.gain.setValueAtTime(masterGain, this.ctx.currentTime);
+            gainNode.gain.setValueAtTime(0.001, this.ctx.currentTime);
+            gainNode.gain.linearRampToValueAtTime(masterGain, this.ctx.currentTime + 0.01);
             gainNode.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + duration);
 
-            osc.connect(gainNode);
+            osc.connect(filter);
+            filter.connect(gainNode);
             gainNode.connect(this.ctx.destination);
 
             osc.start();
-            osc.stop(this.ctx.currentTime + duration);
+            osc.stop(this.ctx.currentTime + duration + 0.02);
         } catch (e) {
-            console.warn('Audio play error:', e);
+            // ignore
         }
     }
 
@@ -104,79 +110,79 @@ class SoundEngine {
         switch (name) {
             case 'click':
             case 'tap':
-                this.playTone(800, 'sine', 0.04, 0.15, 400);
+                this.playTone(720, 'sine', 0.05, 0.15, 360);
                 break;
             case 'select':
-                this.playTone(440, 'triangle', 0.08, 0.2, 880);
+                this.playTone(520, 'triangle', 0.07, 0.18, 780);
                 break;
             case 'move':
-                this.playTone(320, 'sine', 0.05, 0.12, 420);
+                this.playTone(340, 'sine', 0.04, 0.12, 440);
                 break;
             case 'jump':
-                this.playTone(250, 'square', 0.12, 0.25, 650);
+                this.playTone(280, 'triangle', 0.12, 0.22, 600);
                 break;
             case 'laser':
             case 'shoot':
-                this.playTone(900, 'sawtooth', 0.1, 0.25, 120);
+                this.playTone(850, 'sawtooth', 0.09, 0.18, 140);
                 break;
             case 'hit':
-                this.playNoise(0.08, 0.3);
-                this.playTone(180, 'square', 0.08, 0.2, 60);
+                this.playNoise(0.07, 0.2);
+                this.playTone(160, 'triangle', 0.08, 0.18, 50);
                 break;
             case 'explosion':
-                this.playNoise(0.3, 0.5);
-                this.playTone(140, 'sawtooth', 0.25, 0.3, 30);
+                this.playNoise(0.25, 0.35);
+                this.playTone(120, 'sawtooth', 0.2, 0.25, 30);
                 break;
             case 'score':
             case 'point':
-                this.playTone(523.25, 'sine', 0.08, 0.2); // C5
-                setTimeout(() => this.playTone(659.25, 'sine', 0.12, 0.2), 60); // E5
+                this.playTone(523.25, 'sine', 0.08, 0.18);
+                setTimeout(() => this.playTone(659.25, 'sine', 0.1, 0.2), 50);
                 break;
             case 'powerup':
-                [440, 554, 659, 880].forEach((f, i) => {
-                    setTimeout(() => this.playTone(f, 'triangle', 0.08, 0.2), i * 50);
+                [440, 554.37, 659.25, 880].forEach((f, i) => {
+                    setTimeout(() => this.playTone(f, 'triangle', 0.08, 0.2), i * 45);
                 });
                 break;
             case 'clear':
             case 'line':
                 [523.25, 659.25, 783.99, 1046.50].forEach((f, i) => {
-                    setTimeout(() => this.playTone(f, 'square', 0.1, 0.25), i * 40);
+                    setTimeout(() => this.playTone(f, 'triangle', 0.1, 0.22), i * 35);
                 });
                 break;
             case 'card':
             case 'flip':
-                this.playTone(600, 'sine', 0.06, 0.2, 900);
+                this.playTone(580, 'sine', 0.06, 0.18, 880);
                 break;
             case 'match':
-                this.playTone(587.33, 'triangle', 0.1, 0.25);
-                setTimeout(() => this.playTone(880, 'triangle', 0.15, 0.3), 80);
+                this.playTone(587.33, 'triangle', 0.09, 0.22);
+                setTimeout(() => this.playTone(880, 'triangle', 0.14, 0.25), 70);
                 break;
             case 'win':
             case 'victory':
-                const winMelody = [523.25, 659.25, 783.99, 1046.50, 783.99, 1046.50];
+                const winMelody = [523.25, 659.25, 783.99, 1046.50, 880, 1046.50];
                 winMelody.forEach((f, i) => {
-                    setTimeout(() => this.playTone(f, 'triangle', 0.18, 0.35), i * 90);
+                    setTimeout(() => this.playTone(f, 'triangle', 0.15, 0.28), i * 85);
                 });
                 break;
             case 'gameover':
             case 'lose':
-                const loseMelody = [440, 415, 392, 349];
+                const loseMelody = [440, 415.30, 392, 349.23];
                 loseMelody.forEach((f, i) => {
-                    setTimeout(() => this.playTone(f, 'sawtooth', 0.2, 0.3), i * 110);
+                    setTimeout(() => this.playTone(f, 'sawtooth', 0.18, 0.22), i * 100);
                 });
                 break;
             case 'combo':
-                this.playTone(600, 'sine', 0.08, 0.25, 1200);
+                this.playTone(587.33, 'sine', 0.08, 0.22, 1174.66);
                 break;
             case 'flag':
-                this.playTone(700, 'sine', 0.05, 0.15, 900);
+                this.playTone(680, 'sine', 0.05, 0.15, 850);
                 break;
             default:
                 this.playTone(440, 'sine', 0.05, 0.1);
         }
     }
 
-    playNoise(duration = 0.2, gain = 0.3) {
+    playNoise(duration = 0.2, gain = 0.25) {
         if (!this.sfxEnabled) return;
         this.ensureContext();
         if (!this.ctx) return;
@@ -194,8 +200,8 @@ class SoundEngine {
 
             const filter = this.ctx.createBiquadFilter();
             filter.type = 'lowpass';
-            filter.frequency.setValueAtTime(1000, this.ctx.currentTime);
-            filter.frequency.exponentialRampToValueAtTime(80, this.ctx.currentTime + duration);
+            filter.frequency.setValueAtTime(800, this.ctx.currentTime);
+            filter.frequency.exponentialRampToValueAtTime(60, this.ctx.currentTime + duration);
 
             const gainNode = this.ctx.createGain();
             gainNode.gain.setValueAtTime(gain * this.sfxVolume, this.ctx.currentTime);
@@ -208,7 +214,7 @@ class SoundEngine {
             noise.start();
             noise.stop(this.ctx.currentTime + duration);
         } catch (e) {
-            console.warn('Noise error:', e);
+            // ignore
         }
     }
 
@@ -219,12 +225,12 @@ class SoundEngine {
 
         if (this.musicInterval) clearInterval(this.musicInterval);
 
-        // Ambient chiptune 8-bar arpeggio pattern
+        // Chill Lofi synth arpeggio progression
         const notes = [
-            261.63, 329.63, 392.00, 523.25, // C - E - G - C
-            293.66, 349.23, 440.00, 587.33, // D - F - A - D
-            329.63, 392.00, 493.88, 659.25, // E - G - B - E
-            261.63, 349.23, 392.00, 523.25  // C - F - G - C
+            261.63, 329.63, 392.00, 523.25,
+            293.66, 349.23, 440.00, 587.33,
+            329.63, 392.00, 493.88, 659.25,
+            261.63, 349.23, 392.00, 523.25
         ];
 
         this.musicStep = 0;
@@ -236,7 +242,7 @@ class SoundEngine {
             const freq = notes[this.musicStep % notes.length];
             this.playMusicNote(freq);
             this.musicStep++;
-        }, 220);
+        }, 240);
     }
 
     playMusicNote(freq) {
@@ -247,19 +253,25 @@ class SoundEngine {
         try {
             const osc = this.ctx.createOscillator();
             const gainNode = this.ctx.createGain();
+            const filter = this.ctx.createBiquadFilter();
 
-            osc.type = 'triangle';
+            filter.type = 'lowpass';
+            filter.frequency.setValueAtTime(1200, this.ctx.currentTime);
+
+            osc.type = 'sine';
             osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
 
-            const masterGain = 0.08 * this.musicVolume;
-            gainNode.gain.setValueAtTime(masterGain, this.ctx.currentTime);
-            gainNode.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + 0.2);
+            const masterGain = 0.07 * this.musicVolume;
+            gainNode.gain.setValueAtTime(0.001, this.ctx.currentTime);
+            gainNode.gain.linearRampToValueAtTime(masterGain, this.ctx.currentTime + 0.03);
+            gainNode.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + 0.28);
 
-            osc.connect(gainNode);
+            osc.connect(filter);
+            filter.connect(gainNode);
             gainNode.connect(this.ctx.destination);
 
             osc.start();
-            osc.stop(this.ctx.currentTime + 0.2);
+            osc.stop(this.ctx.currentTime + 0.3);
         } catch (e) {
             // ignore
         }

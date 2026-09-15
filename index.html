@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>JuegosSinWifi - Arcade Online y Offline</title>
-    <meta name="description" content="Plataforma de videojuegos arcade jugables online y 100% offline sin conexión, con guardado local y sincronización en la nube de GitHub.">
-    <meta name="theme-color" content="#070913">
+    <title>JuegosSinWifi — Tu Salón Arcade Online y Offline</title>
+    <meta name="description" content="Portal arcade premium con 14 juegos completos jugables online y 100% offline, con guardado local y sincronización en la nube de GitHub.">
+    <meta name="theme-color" content="#060810">
 
-    <!-- PWA Manifest -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- PWA Manifest & Icons -->
     <link rel="manifest" href="manifest.json">
     <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="icons/icon.svg">
@@ -22,38 +27,41 @@
     <header class="app-header">
         <div class="container header-inner">
             <a href="#" class="brand-wrapper">
-                <span class="brand-logo-icon">🕹️</span>
-                <div class="brand-text">
-                    <h1>JuegosSinWifi</h1>
-                    <span class="brand-subtitle">Arcade Online & Offline</span>
+                <div class="brand-icon-badge">🕹️</div>
+                <div>
+                    <h1 class="brand-title">JuegosSinWifi</h1>
+                    <div class="brand-badge">
+                        <span class="live-indicator-dot"></span>
+                        <span>Arcade Offline & Online</span>
+                    </div>
                 </div>
             </a>
 
             <div class="header-actions">
-                <!-- Audio Toggles -->
-                <button class="btn btn-icon" id="btn-global-sound" title="Sonido SFX">🔊</button>
-                <button class="btn btn-icon" id="btn-global-music" title="Música Chiptune">🎵</button>
+                <!-- Audio Controls -->
+                <button class="nav-icon-btn" id="btn-global-sound" title="Sonido SFX (Web Audio)">🔊</button>
+                <button class="nav-icon-btn" id="btn-global-music" title="Música Chiptune">🎵</button>
 
-                <!-- Cloud Sync Status Button -->
-                <button class="btn btn-outline btn-sm" id="btn-open-cloud">
+                <!-- Cloud Sync Status -->
+                <button class="nav-pill-btn" id="btn-open-cloud">
                     <span id="hub-cloud-status"><span class="status-dot gray"></span> Nube</span>
                 </button>
 
-                <!-- Achievements Button -->
-                <button class="btn btn-outline btn-sm" id="btn-open-achievements">
+                <!-- Achievements -->
+                <button class="nav-pill-btn" id="btn-open-achievements">
                     🏆 Logros
                 </button>
 
                 <!-- Player Profile Pill -->
-                <div class="player-mini-pill" id="btn-open-profile" title="Abrir Perfil y Estadísticas">
-                    <span class="avatar-circle" id="hub-player-avatar">👾</span>
-                    <div class="player-info-mini">
-                        <div class="player-name-row">
+                <div class="player-profile-pill" id="btn-open-profile" title="Abrir Perfil y Estadísticas">
+                    <div class="player-avatar-box" id="hub-player-avatar">👾</div>
+                    <div class="player-meta-box">
+                        <div class="player-name-line">
                             <strong id="hub-player-name">CiberJugador</strong>
-                            <span class="player-lvl-badge" id="hub-player-level">Niv. 1</span>
+                            <span class="player-level-badge" id="hub-player-level">Niv. 1</span>
                         </div>
-                        <div class="mini-xp-track">
-                            <div class="mini-xp-fill" id="hub-player-xp-bar"></div>
+                        <div class="player-xp-bar-mini">
+                            <div class="player-xp-fill" id="hub-player-xp-bar"></div>
                         </div>
                     </div>
                 </div>
@@ -63,50 +71,115 @@
 
     <!-- Main Content -->
     <main class="container">
-        <!-- Hero Section -->
+        <!-- Hero Spotlight Section -->
         <section class="hero-section">
-            <div class="hero-card">
-                <div class="hero-left">
-                    <h2 class="hero-title">Tu Sala Arcade <span class="highlight">Sin Límites</span></h2>
-                    <p class="hero-desc">
-                        14 juegos completos para todos los gustos. Juega en tu navegador o descárgalo para jugar sin WiFi ni conexión a internet. Tus récords se guardan en tu navegador y en la <strong>nube de GitHub</strong>.
-                    </p>
-                    <div class="hero-badges">
-                        <span class="hero-badge"><span class="status-dot green"></span> 100% Offline Compatible</span>
-                        <span class="hero-badge">☁️ Cloud Save (GitHub Gists)</span>
-                        <span class="hero-badge">📱 Controles Táctiles y Teclado</span>
-                        <span class="hero-badge">⚡ Cero Anuncios</span>
+            <div class="hero-spotlight-grid">
+                <!-- Left Main Banner -->
+                <div class="hero-main-card">
+                    <div>
+                        <div class="hero-tag">
+                            <span>✨ Destacado</span>
+                            <span>•</span>
+                            <span id="spotlight-title-tag">Cyber Snake Neon</span>
+                        </div>
+                        <h2 class="hero-heading">
+                            Tu Salón Arcade <br>
+                            <span class="gradient-text">Sin Conexión ni Esperas</span>
+                        </h2>
+                        <p class="hero-paragraph">
+                            Disfruta de <strong>14 juegos completos</strong> creados para jugar al instante en cualquier navegador o instalar como aplicación offline. Guarda tu progreso en local y sincronízalo en la nube con tu cuenta de GitHub.
+                        </p>
+                    </div>
+
+                    <div class="hero-cta-row">
+                        <button class="btn btn-primary" id="btn-hero-play-featured">
+                            <span>▶ JUGAR AHORA</span>
+                        </button>
+                        <button class="btn btn-secondary" id="btn-hero-random">
+                            <span>🎲 Juego Aleatorio</span>
+                        </button>
                     </div>
                 </div>
 
-                <div class="hero-right-actions">
-                    <button class="btn btn-secondary" id="btn-export-save">
-                        💾 Descargar Backup (.JSON)
-                    </button>
-                    <button class="btn btn-outline" id="btn-import-save">
-                        📂 Restaurar Backup
-                    </button>
-                    <input type="file" id="file-import-input" accept=".json" style="display: none;">
+                <!-- Right Quick Stats & Backup Tile -->
+                <div class="hero-stats-card">
+                    <div>
+                        <div class="stats-grid-2x2">
+                            <div class="mini-stat-tile">
+                                <span class="stat-icon">🎮</span>
+                                <span class="stat-value" id="stat-total-games">14</span>
+                                <span class="stat-label">Juegos Listos</span>
+                            </div>
+                            <div class="mini-stat-tile">
+                                <span class="stat-icon">⚡</span>
+                                <span class="stat-value" id="stat-games-played">0</span>
+                                <span class="stat-label">Partidas Jugadas</span>
+                            </div>
+                            <div class="mini-stat-tile">
+                                <span class="stat-icon">🏆</span>
+                                <span class="stat-value" id="stat-achievements-count">0/17</span>
+                                <span class="stat-label">Logros</span>
+                            </div>
+                            <div class="mini-stat-tile">
+                                <span class="stat-icon">⭐</span>
+                                <span class="stat-value" id="stat-player-level">Niv. 1</span>
+                                <span class="stat-label">Rango Arcade</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quick-backup-box">
+                        <div class="quick-backup-text">
+                            <strong>Copia de Seguridad Rápida</strong>
+                            <span>Exporta o importa tus partidas en formato JSON</span>
+                        </div>
+                        <div style="display: flex; gap: 6px;">
+                            <button class="btn btn-sm btn-secondary" id="btn-export-save" title="Exportar partida (.JSON)">💾 Guardar</button>
+                            <button class="btn btn-sm btn-outline" id="btn-import-save" title="Restaurar archivo JSON">📂 Cargar</button>
+                            <input type="file" id="file-import-input" accept=".json" style="display: none;">
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Search & Filter Bar -->
+        <!-- Toolbar, Search & Category Filters -->
         <section class="hub-toolbar">
-            <div class="hub-search-row">
-                <div class="search-box">
+            <div class="toolbar-top-row">
+                <div class="search-input-wrapper">
                     <span class="search-icon">🔍</span>
-                    <input type="text" id="search-games-input" placeholder="Buscar juego por nombre o descripción...">
+                    <input type="text" id="search-games-input" placeholder="Buscar por título, categoría o mecánica de juego...">
                 </div>
+                <button class="btn btn-random-game" id="btn-toolbar-random">
+                    <span>🎲 Sorpréndeme</span>
+                </button>
             </div>
 
-            <div class="category-tabs">
-                <button class="category-tab active" data-category="all">🎮 Todos (14)</button>
-                <button class="category-tab" data-category="favorites">⭐ Favoritos</button>
-                <button class="category-tab" data-category="arcade">🚀 Arcade & Acción</button>
-                <button class="category-tab" data-category="puzzle">🧩 Puzzles & Lógica</button>
-                <button class="category-tab" data-category="strategy">🃏 Estrategia & Cartas</button>
-                <button class="category-tab" data-category="words">⚡ Palabras & Reflejos</button>
+            <div class="category-filter-bar">
+                <button class="filter-chip active" data-category="all">
+                    <span>🎮 Todos</span>
+                    <span class="filter-count">14</span>
+                </button>
+                <button class="filter-chip" data-category="favorites">
+                    <span>⭐ Favoritos</span>
+                    <span class="filter-count" id="fav-filter-count">0</span>
+                </button>
+                <button class="filter-chip" data-category="arcade">
+                    <span>🚀 Arcade & Acción</span>
+                    <span class="filter-count">5</span>
+                </button>
+                <button class="filter-chip" data-category="puzzle">
+                    <span>🧩 Puzzles & Lógica</span>
+                    <span class="filter-count">4</span>
+                </button>
+                <button class="filter-chip" data-category="strategy">
+                    <span>🃏 Estrategia & Cartas</span>
+                    <span class="filter-count">2</span>
+                </button>
+                <button class="filter-chip" data-category="words">
+                    <span>⚡ Palabras & Reflejos</span>
+                    <span class="filter-count">3</span>
+                </button>
             </div>
         </section>
 
@@ -114,39 +187,39 @@
         <section class="games-grid" id="games-grid"></section>
     </main>
 
-    <!-- App Footer -->
+    <!-- Footer -->
     <footer class="app-footer">
         <div class="container footer-inner">
-            <div>
-                <strong>JuegosSinWifi</strong> &copy; 2026. Diseñado para jugar en cualquier lugar, con o sin internet.
+            <div class="footer-brand">
+                <strong>JuegosSinWifi</strong> &copy; 2026. Diseñado para jugar sin interrupciones con o sin internet.
             </div>
             <div class="footer-links">
-                <button onclick="document.getElementById('cloud-sync-modal').classList.remove('hidden')">☁️ Configurar GitHub Cloud</button>
-                <button onclick="document.getElementById('achievements-modal').classList.remove('hidden')">🏆 Ver Logros</button>
+                <button onclick="document.getElementById('cloud-sync-modal').classList.remove('hidden')">☁️ GitHub Cloud Sync</button>
+                <button onclick="document.getElementById('achievements-modal').classList.remove('hidden')">🏆 Trofeos y Logros</button>
                 <button onclick="document.getElementById('profile-modal').classList.remove('hidden')">👤 Mi Perfil</button>
             </div>
         </div>
     </footer>
 
     <!-- ====================================================
-         GAME VIEWPORT MODAL (FULLSCREEN / FLOATING GAME ROOM)
+         GAME VIEWPORT MODAL (ARCADE CABIN VIEW)
          ==================================================== -->
     <div id="game-viewport-modal" class="app-modal game-viewport-modal hidden">
         <div class="modal-dialog viewport-card">
             <div class="viewport-toolbar">
                 <div class="viewport-title-group">
-                    <button class="btn btn-icon modal-close-btn" id="btn-exit-game" title="Salir al Hub">✕</button>
+                    <button class="modal-close-btn" id="btn-exit-game" title="Salir al Catálogo">✕</button>
                     <div>
-                        <h2 id="modal-game-title">Juego</h2>
-                        <span class="genre-badge" id="modal-game-genre">Arcade</span>
+                        <h2 id="modal-game-title">Nombre del Juego</h2>
+                        <span class="genre-tag" id="modal-game-genre">Arcade</span>
                     </div>
                 </div>
                 <div class="viewport-actions">
-                    <button class="btn btn-icon" id="btn-sound-toggle" title="Efectos de sonido">🔊</button>
-                    <button class="btn btn-icon" id="btn-music-toggle" title="Música">🎵</button>
-                    <button class="btn btn-icon" id="btn-restart-game" title="Reiniciar partida">🔄</button>
-                    <button class="btn btn-icon" id="btn-help-game" title="Controles e Instrucciones">❓</button>
-                    <button class="btn btn-icon" id="btn-fullscreen" title="Pantalla completa">⛶</button>
+                    <button class="nav-icon-btn" id="btn-sound-toggle" title="Efectos de sonido">🔊</button>
+                    <button class="nav-icon-btn" id="btn-music-toggle" title="Música sintetizada">🎵</button>
+                    <button class="nav-icon-btn" id="btn-restart-game" title="Reiniciar partida">🔄</button>
+                    <button class="nav-icon-btn" id="btn-help-game" title="Instrucciones y Controles">❓</button>
+                    <button class="nav-icon-btn" id="btn-fullscreen" title="Pantalla completa">⛶</button>
                 </div>
             </div>
 
@@ -155,35 +228,35 @@
     </div>
 
     <!-- ====================================================
-         CLOUD SYNC MODAL (GITHUB GIST INTEGRATION)
+         CLOUD SYNC MODAL (GITHUB GISTS)
          ==================================================== -->
     <div id="cloud-sync-modal" class="app-modal hidden">
         <div class="modal-dialog">
             <div class="modal-header">
-                <h2>☁️ Guardado en la Nube de GitHub</h2>
+                <h2>☁️ Guardado en la Nube con GitHub</h2>
                 <button class="modal-close-btn">✕</button>
             </div>
             <div class="modal-body">
                 <div id="cloud-action-status" class="alert" style="display: none;"></div>
                 <div id="cloud-account-info"></div>
 
-                <div class="form-group" style="margin-top: 16px;">
+                <div class="form-group" style="margin-top: 18px;">
                     <label for="gh-token-input">GitHub Personal Access Token (PAT):</label>
                     <input type="password" id="gh-token-input" class="form-input" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
-                    <small style="color: var(--text-muted); display: block; margin-top: 6px; font-size: 0.78rem; line-height: 1.4;">
-                        🔑 <strong>¿Cómo obtener tu token?</strong> En GitHub ve a: <em>Settings &gt; Developer Settings &gt; Personal Access Tokens (Tokens classic) &gt; Generate new token</em> y marca la casilla <strong>gist</strong>. Tu token se almacena únicamente en tu navegador de forma segura.
+                    <small style="color: var(--text-secondary); display: block; margin-top: 8px; font-size: 0.8rem; line-height: 1.5;">
+                        🔑 <strong>Instrucciones:</strong> En tu GitHub ve a <em>Settings &gt; Developer Settings &gt; Personal Access Tokens (classic) &gt; Generate new token</em> y marca la casilla <strong>gist</strong>. Tu token nunca sale de tu navegador.
                     </small>
                 </div>
 
-                <div style="display: flex; gap: 8px; margin-bottom: 20px;">
+                <div style="display: flex; gap: 8px; margin-bottom: 22px;">
                     <button class="btn btn-primary btn-sm" id="btn-save-gh-token">Guardar Token</button>
                     <button class="btn btn-secondary btn-sm" id="btn-test-gh-token">Probar Conexión</button>
-                    <button class="btn btn-outline btn-sm" id="btn-disconnect-cloud" style="margin-left: auto; color: var(--danger);">Desconectar</button>
+                    <button class="btn btn-outline btn-sm" id="btn-disconnect-cloud" style="margin-left: auto; color: var(--rose);">Desconectar</button>
                 </div>
 
-                <div style="border-top: 1px solid var(--border-color); padding-top: 16px;">
-                    <h4 style="margin-bottom: 10px; color: var(--text-bright); font-size: 0.95rem;">Acciones de Sincronización</h4>
-                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <div style="border-top: 1px solid var(--border-subtle); padding-top: 18px;">
+                    <h4 style="margin-bottom: 12px; color: var(--text-pure); font-family: var(--font-heading); font-size: 1.05rem;">Sincronizar Datos</h4>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
                         <button class="btn btn-primary" id="btn-upload-cloud" style="flex: 1;">
                             ⬆ Subir Partida a GitHub
                         </button>
@@ -205,14 +278,14 @@
     <div id="achievements-modal" class="app-modal hidden">
         <div class="modal-dialog">
             <div class="modal-header">
-                <h2>🏆 Logros y Trofeos</h2>
+                <h2>🏆 Trofeos y Logros Arcade</h2>
                 <button class="modal-close-btn">✕</button>
             </div>
             <div class="modal-body">
                 <div class="achievements-progress-wrapper">
                     <div class="ach-progress-info">
-                        <span>Progreso Total:</span>
-                        <strong id="achievements-unlocked-count">0 / 0</strong>
+                        <span style="color: var(--text-secondary);">Progreso de Desbloqueo:</span>
+                        <strong id="achievements-unlocked-count" style="color: var(--cyan);">0 / 0</strong>
                     </div>
                     <div class="progress-bar-bg">
                         <div class="progress-bar-fill" id="achievements-progress-bar"></div>
@@ -238,20 +311,20 @@
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <label>Elige tu Avatar:</label>
+                    <label>Selecciona tu Avatar:</label>
                     <div class="avatar-picker-grid" id="avatar-picker-grid"></div>
                 </div>
 
                 <div class="form-group">
                     <label for="profile-nick-input">Nombre de Jugador:</label>
-                    <div style="display: flex; gap: 8px;">
+                    <div style="display: flex; gap: 10px;">
                         <input type="text" id="profile-nick-input" class="form-input" maxlength="20">
                         <button class="btn btn-primary btn-sm" id="btn-save-profile-nick">Guardar</button>
                     </div>
                 </div>
 
-                <div style="margin-top: 20px;">
-                    <h4 style="color: var(--text-bright); font-size: 0.95rem; margin-bottom: 8px;">Estadísticas Generales</h4>
+                <div style="margin-top: 24px;">
+                    <h4 style="color: var(--text-pure); font-family: var(--font-heading); font-size: 1.05rem; margin-bottom: 12px;">Estadísticas Generales</h4>
                     <div class="profile-stats-grid" id="profile-stats-grid"></div>
                 </div>
             </div>
@@ -265,14 +338,14 @@
          HELP / CONTROLS MODAL
          ==================================================== -->
     <div id="help-modal" class="app-modal hidden">
-        <div class="modal-dialog" style="max-width: 440px;">
+        <div class="modal-dialog" style="max-width: 480px;">
             <div class="modal-header">
                 <h2 id="help-modal-title">Instrucciones</h2>
                 <button class="modal-close-btn">✕</button>
             </div>
             <div class="modal-body">
-                <p id="help-modal-desc" style="margin-bottom: 14px; line-height: 1.5; color: var(--text-muted);"></p>
-                <div id="help-modal-controls" style="background: var(--bg-dark); padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); color: var(--text-bright); font-size: 0.9rem;"></div>
+                <p id="help-modal-desc" style="margin-bottom: 16px; line-height: 1.6; color: var(--text-secondary); font-size: 0.95rem;"></p>
+                <div id="help-modal-controls" style="background: rgba(6, 8, 16, 0.7); padding: 14px 18px; border-radius: var(--radius-sm); border: 1px solid var(--border-light); color: var(--text-pure); font-size: 0.92rem; line-height: 1.5;"></div>
             </div>
             <div class="modal-footer">
                 <button class="btn btn-primary modal-close-btn">¡Entendido!</button>
@@ -280,13 +353,13 @@
         </div>
     </div>
 
-    <!-- Core Scripts -->
+    <!-- Core Audio & Storage Engines -->
     <script src="js/audio.js"></script>
     <script src="js/storage.js"></script>
     <script src="js/achievements.js"></script>
     <script src="js/profile.js"></script>
 
-    <!-- Game Scripts (14 Games) -->
+    <!-- 14 Game Engine Modules -->
     <script src="js/games/snake.js"></script>
     <script src="js/games/tetris.js"></script>
     <script src="js/games/space-invaders.js"></script>
@@ -302,7 +375,7 @@
     <script src="js/games/typing.js"></script>
     <script src="js/games/solitaire.js"></script>
 
-    <!-- Main App Router -->
+    <!-- App Router & Controller -->
     <script src="js/app.js"></script>
 </body>
 </html>
