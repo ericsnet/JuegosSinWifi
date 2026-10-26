@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
             color: '#10b981',
             desc: 'La serpiente clásica reinventada con estelas brillantes, manzanas doradas y aceleración progresiva.',
             controls: 'Teclas Flechas / WASD o Deslizar en pantalla táctil.',
-            classRef: window.CyberSnake
+            className: 'CyberSnake', script: 'js/games/snake.js'
         },
         {
             id: 'tetris',
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             color: '#00f0ff',
             desc: 'El legendario juego de encajar bloques con función Guardar pieza (Hold), sombra fantasma y combos.',
             controls: '◄ ► Mover, ▲ Rotar, ▼ Bajar, Espacio Caída rápida, C Guardar pieza.',
-            classRef: window.NeonTetris
+            className: 'NeonTetris', script: 'js/games/tetris.js'
         },
         {
             id: 'space',
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             color: '#ec4899',
             desc: 'Shooter espacial retro. Destruye oleadas de invasores alienígenas, recoge power-ups y vence a los jefes.',
             controls: '◄ ► Mover nave, Espacio / Fuego Disparar.',
-            classRef: window.SpaceDefender
+            className: 'SpaceDefender', script: 'js/games/space-invaders.js'
         },
         {
             id: 'flappy',
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
             color: '#f43f5e',
             desc: 'Pilota un drone futurista a través de barreras láser flotantes con físicas de impulso.',
             controls: 'Toca la pantalla, Clic o pulsa Espacio para dar propulsión.',
-            classRef: window.FlappyCyber
+            className: 'FlappyCyber', script: 'js/games/flappy.js'
         },
         {
             id: 'game2048',
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
             color: '#f59e0b',
             desc: 'Desliza y fusiona números idénticos para alcanzar la mítica ficha 2048. ¡Incluye botón Deshacer!',
             controls: 'Flechas / Deslizar en pantalla.',
-            classRef: window.Game2048
+            className: 'Game2048', script: 'js/games/game2048.js'
         },
         {
             id: 'minesweeper',
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
             color: '#fb923c',
             desc: 'Despeja el campo minado usando lógica y números. Primer clic siempre seguro garantizado.',
             controls: 'Clic para revelar, Clic derecho o botón Bandera para marcar minas.',
-            classRef: window.Minesweeper
+            className: 'Minesweeper', script: 'js/games/minesweeper.js'
         },
         {
             id: 'memory',
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
             color: '#a855f7',
             desc: 'Encuentra todas las parejas de cartas en el menor número de movimientos y tiempo posible.',
             controls: 'Clic o Toca las cartas para voltearlas.',
-            classRef: window.MemoryMatrix
+            className: 'MemoryMatrix', script: 'js/games/memory.js'
         },
         {
             id: 'sudoku',
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
             color: '#06b6d4',
             desc: 'Desafíos de Sudoku con 4 dificultades, notas a lápiz, validación y sistema de pistas.',
             controls: 'Selecciona casilla y pulsa un número del 1 al 9.',
-            classRef: window.SudokuMaster
+            className: 'SudokuMaster', script: 'js/games/sudoku.js'
         },
         {
             id: 'connect4',
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
             color: '#f43f5e',
             desc: 'Alinea 4 fichas en raya. Juega contra la IA (algoritmo Minimax) o contra un amigo en local.',
             controls: 'Toca la columna deseada para soltar la ficha.',
-            classRef: window.ConnectFour
+            className: 'ConnectFour', script: 'js/games/connect4.js'
         },
         {
             id: 'hangman',
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
             color: '#10b981',
             desc: 'Adivina cientos de palabras en español clasificadas por categorías con teclado interactivo.',
             controls: 'Toca las letras del teclado virtual o pulsa las teclas de tu teclado.',
-            classRef: window.HangmanGame
+            className: 'HangmanGame', script: 'js/games/hangman.js'
         },
         {
             id: 'pong',
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
             color: '#00f0ff',
             desc: 'El clásico duelo de tenis de mesa arcade con físicas de efecto y modo 1P vs IA o 2P local.',
             controls: 'P1: W/S o Arrastre táctil | P2: Flechas Arriba/Abajo.',
-            classRef: window.CyberPong
+            className: 'CyberPong', script: 'js/games/pong.js'
         },
         {
             id: 'runner',
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
             color: '#34d399',
             desc: 'Corre sin parar por el desierto ciberpunk saltando obstáculos y agachándote bajo los drones.',
             controls: 'Espacio / ▲ Saltar, ▼ Agacharse.',
-            classRef: window.DinoRunner
+            className: 'DinoRunner', script: 'js/games/runner.js'
         },
         {
             id: 'typing',
@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
             color: '#f59e0b',
             desc: 'Escribe a toda velocidad las palabras que caen del cielo para destruir sus proyectiles.',
             controls: 'Escribe las palabras con tu teclado antes de que toquen el suelo.',
-            classRef: window.SpeedTyper
+            className: 'SpeedTyper', script: 'js/games/typing.js'
         },
         {
             id: 'solitaire',
@@ -156,11 +156,13 @@ document.addEventListener('DOMContentLoaded', () => {
             color: '#f97316',
             desc: 'El rey de los solitarios de cartas. Modo Robar 1 o 3, auto-completar, clics directos y deshacer.',
             controls: 'Clic o Toca una carta para enviarla automáticamente a su lugar válido.',
-            classRef: window.SolitaireKlondike
+            className: 'SolitaireKlondike', script: 'js/games/solitaire.js'
         }
     ];
 
     let currentActiveGame = null;
+    let launchSequence = 0;
+    const loadedGameScripts = new Map();
     let currentFilter = 'all';
     let searchQuery = '';
     let featuredGameId = 'snake';
@@ -348,11 +350,30 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     // GAME LAUNCHER & MODAL VIEWPORT
     // ==========================================
-    function launchGame(gameId) {
+    function loadGameScript(src) {
+        if (loadedGameScripts.has(src)) return loadedGameScripts.get(src);
+
+        const pending = new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = src;
+            script.async = true;
+            script.onload = resolve;
+            script.onerror = () => {
+                loadedGameScripts.delete(src);
+                reject(new Error('No se pudo cargar el motor del juego.'));
+            };
+            document.body.appendChild(script);
+        });
+
+        loadedGameScripts.set(src, pending);
+        return pending;
+    }
+
+    async function launchGame(gameId) {
         const gameMeta = GAMES_CATALOG.find(g => g.id === gameId);
         if (!gameMeta) return;
+        const requestId = ++launchSequence;
 
-        // Clean up any existing game instance
         if (currentActiveGame && typeof currentActiveGame.destroy === 'function') {
             currentActiveGame.destroy();
             currentActiveGame = null;
@@ -361,23 +382,33 @@ document.addEventListener('DOMContentLoaded', () => {
         modalGameTitle.textContent = gameMeta.title;
         modalGameGenre.textContent = gameMeta.genreLabel;
         modalGameGenre.style.color = gameMeta.color;
-        gameContainer.innerHTML = '';
-
+        gameContainer.textContent = 'Cargando juego…';
         gameModal.classList.remove('hidden');
         document.body.classList.add('modal-open');
 
-        // Instantiate game class
-        const GameClass = gameMeta.classRef;
-        if (GameClass) {
+        try {
+            await loadGameScript(gameMeta.script);
+            if (requestId !== launchSequence) return;
+
+            const GameClass = window[gameMeta.className];
+            if (typeof GameClass !== 'function') {
+                throw new Error('El motor del juego no está disponible.');
+            }
+
+            gameContainer.innerHTML = '';
             currentActiveGame = new GameClass(gameContainer);
             currentActiveGame.gameId = gameId;
             currentActiveGame.init();
+            window.sound?.play('select');
+        } catch (error) {
+            if (requestId !== launchSequence) return;
+            gameContainer.textContent = 'No se pudo cargar este juego. Comprueba la conexión o vuelve a intentarlo.';
+            console.error('Error al cargar el juego:', error);
         }
-
-        window.sound?.play('select');
     }
 
     function exitGame() {
+        launchSequence++;
         if (currentActiveGame && typeof currentActiveGame.destroy === 'function') {
             currentActiveGame.destroy();
             currentActiveGame = null;
