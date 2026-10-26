@@ -1,97 +1,126 @@
+<div align="center">
+
 # 🕹️ JuegosSinWifi
 
-> **Portal Arcade de Videojuegos 100% Funcional Online y Offline con Guardado Local y en la Nube de GitHub.**
+### Tu pequeña arcade, incluso cuando no tienes Internet.
 
-![JuegosSinWifi](icons/icon.svg)
+Una colección de **14 juegos en HTML, CSS y JavaScript**, con guardado local, controles táctiles y soporte PWA para jugar desde el navegador.
 
-🌐 **Página web:** [https://ericsnet.github.io/JuegosSinWifi/](https://ericsnet.github.io/JuegosSinWifi/)
+[**▶ Jugar ahora**](https://ericsnet.github.io/JuegosSinWifi/) · [Ver el código](https://github.com/ericsnet/JuegosSinWifi) · [Informar de un problema](https://github.com/ericsnet/JuegosSinWifi/issues)
 
----
+![GitHub last commit](https://img.shields.io/github/last-commit/ericsnet/JuegosSinWifi?style=flat-square)
+![GitHub repo size](https://img.shields.io/github/repo-size/ericsnet/JuegosSinWifi?style=flat-square)
+![License](https://img.shields.io/badge/licencia-MIT-2ea44f?style=flat-square)
+![PWA](https://img.shields.io/badge/PWA-compatible-5a4fcf?style=flat-square)
 
-## 🌟 Características Principales
-
-- 🌐 **Juega Online y Offline**: Funciona en cualquier navegador web moderno, como aplicación web progresiva (PWA) instalable en tu móvil u ordenador, o descargando los archivos para jugar sin conexión ni internet.
-- 🎮 **14 Juegos Completos para Todos los Gustos**:
-  1. **Cyber Snake Neon** (Serpiente arcade con poderes y aceleración)
-  2. **TetroBlocks Neon (Tetris)** (Piezas con rotación SRS, retención/hold, sombras y combos)
-  3. **Space Defender** (Shooter espacial contra oleadas, jefes y power-ups)
-  4. **Flappy Cyber** (Vuelo táctico con físicas y esquive de obstáculos)
-  5. **2048 Fusion** (Fusión numérica con función de deshacer y modos de récord)
-  6. **Buscaminas Deluxe** (3 niveles de dificultad, banderas y primer clic seguro)
-  7. **Memory Matrix** (Encuentra parejas con múltiples temas y tamaños de tablero)
-  8. **Sudoku Master** (Generador de tableros lógicos con 4 dificultades, lápiz y pistas)
-  9. **Conecta 4 Neón** (Modo 1 Jugador contra IA Minimax y Modo 2 Jugadores en pantalla compartida)
-  10. **El Ahorcado Pro** (Cientos de palabras en español clasificadas por categorías)
-  11. **Cyber Pong** (Tenis de mesa retro con físicas de efecto y modos 1P / 2P)
-  12. **Neon Dino Runner** (Corredor infinito con saltos, agachadas y ciclo día/noche)
-  13. **Speed Typer** (Mecanografía y reflejos para interceptar palabras que caen)
-  14. **Solitario Klondike** (Clásico juego de cartas con modos Robar 1/3, deshacer y autocompletar)
-- 💾 **Doble Sistema de Guardado**:
-  - **Guardado Local Automático**: Guarda puntuaciones máximas, estadísticas de partidas, logros desbloqueados y perfil de jugador en tu dispositivo.
-  - **Sincronización en la Nube con GitHub (Gists)**: Conecta tu token de GitHub para subir y descargar tu partida en cualquier momento y compartir tu progreso entre varios dispositivos.
-  - **Copia de Seguridad en Archivo JSON**: Exporta e importa tu archivo de partida en un solo clic sin necesidad de cuentas ni registros.
-- 🔊 **Audio Sintetizado 100% Offline**: Efectos de sonido arcade (SFX) y música chiptune ambiental generada mediante Web Audio API en tiempo real (sin necesidad de descargar pesados archivos de audio).
-- 📱 **Controles Táctiles y de Teclado**: Soporte completo para pantallas táctiles (botones en pantalla, swipes, toques) y teclados de PC (WASD, flechas, barra espaciadora).
-- 🏆 **Sistema Global de Logros y Niveles de Jugador (XP)**.
+</div>
 
 ---
 
-## 🚀 Cómo Ejecutar el Proyecto
+## 🎮 Juegos incluidos
 
-### Opción 1: Directamente en el Navegador (Sin dependencias)
-Simplemente abre el archivo `index.html` en tu navegador favorito (Chrome, Edge, Firefox, Safari, etc.).
+| Juego | ¿De qué va? |
+|---|---|
+| 🐍 **Cyber Snake Neon** | Serpiente arcade con poderes y aceleración. |
+| 🧱 **TetroBlocks Neon** | Bloques, rotaciones SRS, retención de piezas y combos. |
+| 🚀 **Space Defender** | Combate espacial con oleadas, jefes y mejoras. |
+| 🐦 **Flappy Cyber** | Vuelo y esquiva de obstáculos. |
+| 🔢 **2048 Fusion** | Combina números, deshaz movimientos y supera récords. |
+| 💣 **Buscaminas Deluxe** | Tres dificultades, banderas y primer clic seguro. |
+| 🧠 **Memory Matrix** | Encuentra parejas con distintos temas y tableros. |
+| 🔢 **Sudoku Master** | Cuatro dificultades, notas y pistas. |
+| 🔴 **Conecta 4 Neón** | Juega contra la IA o contra otra persona en el mismo dispositivo. |
+| 🔤 **El Ahorcado Pro** | Palabras en español organizadas por categorías. |
+| 🏓 **Cyber Pong** | Pong con efecto y modos para uno o dos jugadores. |
+| 🦖 **Neon Dino Runner** | Carrera infinita con saltos, agachadas y ciclo día/noche. |
+| ⌨️ **Speed Typer** | Practica mecanografía y reflejos. |
+| 🃏 **Solitario Klondike** | Modos de robar una o tres cartas, deshacer y autocompletar. |
 
-### Opción 2: Con un Servidor Local Ligero (Recomendado para Service Worker / PWA)
+## ✨ Características
+
+- **🌐 Online y offline:** juega desde el navegador; el Service Worker permite almacenar recursos para usarlos sin conexión después de la carga inicial.
+- **📱 Adaptado a móviles:** controles táctiles y de teclado.
+- **📲 Instalable:** compatible con el enfoque de aplicación web progresiva (PWA).
+- **💾 Guardado local:** conserva el perfil, las estadísticas, los récords y los logros en el dispositivo.
+- **☁️ Sincronización opcional con GitHub Gists:** permite transferir el progreso entre dispositivos.
+- **📦 Copias de seguridad:** exporta e importa partidas mediante archivos JSON.
+- **🔊 Audio generado en el navegador:** efectos y música sintetizados con Web Audio API, sin descargar archivos de audio.
+- **🏆 Progresión:** experiencia, niveles y logros.
+
+## 🚀 Cómo jugar
+
+### Opción 1: abrir la página
+
+Entra en **[ericsnet.github.io/JuegosSinWifi](https://ericsnet.github.io/JuegosSinWifi/)**. Para jugar sin conexión, abre la página primero con Internet y deja que se descarguen y almacenen los recursos necesarios.
+
+### Opción 2: ejecutar una copia local
+
+Clona el repositorio:
+
 ```bash
-# Con Node.js / npx
-npx serve -l 8080 -s .
+git clone https://github.com/ericsnet/JuegosSinWifi.git
+cd JuegosSinWifi
+```
 
-# O con Python 3
+Inicia un servidor local con una de estas opciones:
+
+```bash
+# Python 3
 python3 -m http.server 8080
 ```
-Luego abre `http://localhost:8080` en tu navegador.
 
-### Opción 3: Despliegue en GitHub Pages
-1. Sube este repositorio a tu cuenta de GitHub.
-2. Ve a **Settings > Pages**.
-3. En **Branch**, selecciona `main` o tu rama por defecto y la carpeta `/ (root)`.
-4. ¡Listo! Tu portal arcade estará disponible online en `https://<tu-usuario>.github.io/JuegosSinWifi/`.
+O, si tienes Node.js instalado:
 
----
+```bash
+npx serve -l 8080 -s .
+```
 
-## ☁️ Configuración del Guardado en la Nube de GitHub
+Después abre [http://localhost:8080](http://localhost:8080).
 
-Para activar la sincronización con la nube:
+> **Nota:** abrir `index.html` directamente puede permitir jugar, pero los Service Workers y algunas funciones PWA requieren un origen HTTP/HTTPS.
 
-1. Ve a tu cuenta de GitHub: **Settings > Developer Settings > Personal Access Tokens > Tokens (classic)**.
-2. Haz clic en **Generate new token (classic)**.
-3. Asígnale un nombre (ej. `JuegosSinWifi Save`) y marca únicamente el permiso **`gist`**.
-4. Copia el token generado (`ghp_...`).
-5. En el juego, haz clic en el botón **Nube** o abre la ventana de sincronización, pega tu token y pulsa **Guardar Token**.
-6. ¡Ahora puedes pulsar **Subir Partida a GitHub** o **Descargar de GitHub** cuando quieras!
+## ☁️ Guardado en la nube con GitHub
 
----
+La sincronización con Gists es opcional. Si prefieres no conectar GitHub, puedes seguir usando el guardado local y las copias JSON.
 
-## 📂 Estructura del Código
+1. En GitHub, crea un **Personal Access Token (classic)** desde *Settings → Developer settings → Personal access tokens → Tokens (classic)*.
+2. Concede únicamente el permiso **`gist`**.
+3. Introduce el token en la sección de sincronización de JuegosSinWifi.
+4. Usa las opciones para subir o descargar la partida.
+
+**Seguridad:** el token se guarda en el almacenamiento local del navegador. Usa esta función solo en dispositivos de confianza, no compartas el token y revócalo desde GitHub si crees que se ha expuesto. No concedas permisos adicionales a `gist`.
+
+## 🧰 Tecnologías
+
+- HTML5, CSS3 y JavaScript.
+- Canvas y DOM para la interfaz y los juegos.
+- Web Audio API para sonido generado en tiempo real.
+- LocalStorage para datos locales.
+- GitHub Gists API para la sincronización opcional.
+- Service Worker y Web App Manifest para las funciones PWA.
+
+No se necesita un proceso de compilación para ejecutar el proyecto.
+
+## 📁 Estructura del proyecto
 
 ```text
 JuegosSinWifi/
-├── index.html                 # Portal principal Arcade
-├── manifest.json              # Configuración PWA
-├── sw.js                      # Service Worker para funcionamiento 100% Offline
+├── index.html
+├── manifest.json
+├── sw.js
 ├── icons/
-│   └── icon.svg               # Icono vectorial oficial
+│   └── icon.svg
 ├── css/
-│   ├── style.css              # Tema ciberpunk neón, variables y componentes
-│   ├── games.css              # Estilos específicos de cada juego
-│   └── responsive.css         # Adaptabilidad móvil y táctil
+│   ├── style.css
+│   ├── games.css
+│   └── responsive.css
 ├── js/
-│   ├── audio.js               # Motor de audio sintetizado Web Audio API
-│   ├── storage.js             # Gestor de LocalStorage y API de GitHub Gists
-│   ├── achievements.js        # Sistema de logros globales y XP
-│   ├── profile.js             # Perfil de jugador y avatares
-│   ├── app.js                 # Enrutador, catálogo y control de modales
-│   └── games/                 # Módulos de los 14 juegos
+│   ├── app.js
+│   ├── audio.js
+│   ├── storage.js
+│   ├── achievements.js
+│   ├── profile.js
+│   └── games/
 │       ├── snake.js
 │       ├── tetris.js
 │       ├── space-invaders.js
@@ -109,8 +138,25 @@ JuegosSinWifi/
 └── README.md
 ```
 
+## 🤝 Contribuir
+
+¿Has encontrado un error o tienes una idea para mejorar el proyecto?
+
+1. Abre un [issue](https://github.com/ericsnet/JuegosSinWifi/issues) describiendo el problema o la propuesta.
+2. Si quieres aportar código, crea un fork y prepara una pull request con los cambios.
+
+Procura comprobar tanto el juego afectado como el funcionamiento en móvil y sin conexión.
+
+## 📄 Licencia
+
+Este proyecto se distribuye bajo la **licencia MIT**. Consulta el archivo [LICENSE](https://github.com/ericsnet/JuegosSinWifi/blob/main/LICENSE) para ver sus términos.
+
 ---
 
-## 📜 Licencia
+<div align="center">
 
-Distribuido bajo la Licencia MIT. ¡Siéntete libre de modificarlo, mejorarlo y jugar cuanto quieras!
+**[▶ Jugar a JuegosSinWifi](https://ericsnet.github.io/JuegosSinWifi/)**
+
+Hecho para jugar, también cuando no hay Wi-Fi.
+
+</div>
