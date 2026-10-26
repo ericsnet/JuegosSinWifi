@@ -34,7 +34,11 @@ Una colección de **18 juegos en HTML, CSS y JavaScript**, con guardado local, c
 | 🏓 **Cyber Pong** | Pong con efecto y modos para uno o dos jugadores. |
 | 🦖 **Neon Dino Runner** | Carrera infinita con saltos, agachadas y ciclo día/noche. |
 | ⌨️ **Speed Typer** | Practica mecanografía y reflejos. |
-| 🃏 **Solitario Klondike** | Modos de robar una o tres cartas, deshacer y autocompletar. |\n| 🧱 **Breakout** | Rompe bloques con una pala y una pelota, con controles táctiles y teclado. |\n| ⭕ **Tres en raya** | Clásico de estrategia para dos personas en el mismo dispositivo. |\n| 💡 **Lights Out** | Apaga todas las luces con el menor número de movimientos. |\n| ⏱️ **Prueba de reacción** | Mide tu tiempo de respuesta con una prueba rápida de reflejos. |
+| 🃏 **Solitario Klondike** | Modos de robar una o tres cartas, deshacer y autocompletar. |
+| 🧱 **Breakout** | Rompe bloques con una pala y una pelota, con controles táctiles y teclado. |
+| ⭕ **Tres en raya** | Clásico de estrategia para dos personas en el mismo dispositivo. |
+| 💡 **Lights Out** | Apaga todas las luces con el menor número de movimientos. |
+| ⏱️ **Prueba de reacción** | Mide tu tiempo de respuesta con una prueba rápida de reflejos. |
 
 ## ✨ Características
 
@@ -134,7 +138,11 @@ JuegosSinWifi/
 │       ├── pong.js
 │       ├── runner.js
 │       ├── typing.js
-│       ├── solitaire.js\n│       ├── breakout.js\n│       ├── tictactoe.js\n│       ├── lightsout.js\n│       └── reaction.js
+│       ├── solitaire.js
+│       ├── breakout.js
+│       ├── tictactoe.js
+│       ├── lightsout.js
+│       └── reaction.js
 └── README.md
 ```
 
