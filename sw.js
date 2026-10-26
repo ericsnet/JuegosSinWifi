@@ -1,4 +1,4 @@
-const CACHE_NAME = 'juegossinwifi-v1.0.0';
+const CACHE_NAME = 'juegossinwifi-v1.1.0';
 const ASSETS_TO_CACHE = [
     './',
     './index.html',
