@@ -10,7 +10,7 @@ Una colección de **18 juegos en HTML, CSS y JavaScript**, con guardado local, c
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/ericsnet/JuegosSinWifi?style=flat-square)
 ![GitHub repo size](https://img.shields.io/github/repo-size/ericsnet/JuegosSinWifi?style=flat-square)
-![License](https://img.shields.io/badge/licencia-MIT-2ea44f?style=flat-square)
+![License](https://img.shields.io/badge/licencia-propietaria-555?style=flat-square)
 ![PWA](https://img.shields.io/badge/PWA-compatible-5a4fcf?style=flat-square)
 
 </div>
@@ -157,7 +157,9 @@ Procura comprobar tanto el juego afectado como el funcionamiento en móvil y sin
 
 ## 📄 Licencia
 
-Este proyecto se distribuye bajo la **licencia MIT**. Consulta el archivo [LICENSE](https://github.com/ericsnet/JuegosSinWifi/blob/main/LICENSE) para ver sus términos.
+Copyright (c) 2026 **ericsnet**. Todos los derechos reservados.
+
+Este proyecto es software propietario. No se concede permiso para copiar, modificar, distribuir o crear obras derivadas sin autorización escrita previa, salvo lo permitido por la ley aplicable. Consulta el archivo [LICENSE](https://github.com/ericsnet/JuegosSinWifi/blob/main/LICENSE).
 
 ---
 
