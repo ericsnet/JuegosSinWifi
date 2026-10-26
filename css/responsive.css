@@ -143,3 +143,53 @@
         justify-content: center;
     }
 }
+
+
+/* Perfil ligero para móviles y dispositivos con interacción táctil. */
+@media (hover: none), (max-width: 768px) {
+    .app-header,
+    .hero-stats-card,
+    .hero-main-card,
+    .game-card,
+    .app-modal .modal-dialog,
+    .viewport-card,
+    .achievement-toast,
+    .falling-word {
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+    }
+
+    .app-header,
+    .hero-stats-card,
+    .hero-main-card,
+    .game-card,
+    .app-modal .modal-dialog,
+    .viewport-card,
+    .achievement-toast {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
+    }
+
+    body::before,
+    body::after {
+        display: none;
+    }
+
+    .game-card,
+    .btn,
+    .nav-icon-btn,
+    .nav-pill-btn {
+        transition-duration: 0.12s;
+    }
+}
+
+/* Respeta la preferencia del sistema y evita animaciones decorativas innecesarias. */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
