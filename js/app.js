@@ -158,6 +158,34 @@ document.addEventListener('DOMContentLoaded', () => {
             controls: 'Clic o Toca una carta para enviarla automáticamente a su lugar válido.',
             className: 'SolitaireKlondike', script: 'js/games/solitaire.js'
         }
+        {
+            id: 'breakout', title: 'Breakout', genre: 'arcade', genreLabel: 'Arcade',
+            icon: '🧱', color: '#c6a66b',
+            desc: 'Rompe todos los bloques con una pala y una pelota. Controles de teclado, ratón y táctiles.',
+            controls: 'Flechas o ratón para mover la pala. Espacio o toque para lanzar la pelota.',
+            className: 'Breakout', script: 'js/games/breakout.js'
+        },
+        {
+            id: 'tictactoe', title: 'Tres en raya', genre: 'strategy', genreLabel: 'Estrategia',
+            icon: '⭕', color: '#6f9fca',
+            desc: 'El clásico juego de tablero para dos personas en el mismo dispositivo.',
+            controls: 'Selecciona una casilla libre para colocar tu símbolo.',
+            className: 'TicTacToe', script: 'js/games/tictactoe.js'
+        },
+        {
+            id: 'lightsout', title: 'Lights Out', genre: 'puzzle', genreLabel: 'Lógica',
+            icon: '💡', color: '#d5b56d',
+            desc: 'Apaga todas las luces del tablero. Cada toque cambia la casilla y sus vecinas.',
+            controls: 'Toca o haz clic en una luz para cambiarla junto a sus vecinas.',
+            className: 'LightsOut', script: 'js/games/lightsout.js'
+        },
+        {
+            id: 'reaction', title: 'Prueba de reacción', genre: 'arcade', genreLabel: 'Reflejos',
+            icon: '⏱️', color: '#8db8a5',
+            desc: 'Mide tus reflejos: espera a que el panel cambie y pulsa lo más rápido posible.',
+            controls: 'Pulsa para iniciar. Espera al color verde y vuelve a pulsar.',
+            className: 'ReactionTest', script: 'js/games/reaction.js'
+        }
     ];
 
     let currentActiveGame = null;
@@ -224,6 +252,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const statAch = document.getElementById('stat-achievements-count');
         const statLvl = document.getElementById('stat-player-level');
         const favCount = document.getElementById('fav-filter-count');
+        const totalGames = document.getElementById('stat-total-games');
+        if (totalGames) totalGames.textContent = GAMES_CATALOG.length;
 
         if (statGamesPlayed) statGamesPlayed.textContent = data.profile.gamesPlayed || 0;
         if (statAch) {

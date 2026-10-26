@@ -1,7 +1,7 @@
 {
   "name": "JuegosSinWifi - Arcade Offline & Online",
   "short_name": "JuegosSinWifi",
-  "description": "Portal de 14 juegos completos arcade y lógicos, jugables online y 100% offline con guardado en GitHub.",
+  "description": "Portal de 18 juegos completos arcade y lógicos, jugables online y 100% offline con guardado en GitHub.",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#070913",

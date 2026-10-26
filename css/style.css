@@ -1364,3 +1364,45 @@ body.modal-open {
     font-size: 0.82rem;
     color: var(--text-secondary);
 }
+
+
+/* Ajuste visual: menos efectos de plantilla, misma tipografía y paleta oscura. */
+:root {
+  --bg-card: #111827;
+  --bg-card-hover: #172131;
+  --bg-glass: #111827;
+  --border-subtle: #273244;
+  --border-light: #354155;
+  --border-highlight: #4f8490;
+  --shadow-card: 0 5px 16px rgba(0,0,0,.18);
+  --shadow-card-hover: 0 8px 20px rgba(0,0,0,.25);
+  --shadow-modal: 0 18px 48px rgba(0,0,0,.48);
+}
+body::before, body::after { display: none; }
+.app-header { background: #090d15; backdrop-filter: none; -webkit-backdrop-filter: none; }
+.brand-icon-badge { box-shadow: none; background: #16212d; border-color: #354155; }
+.brand-icon-badge::after { display: none; }
+.hero-main-card, .hero-stats-card, .game-card, .app-modal .modal-dialog, .viewport-card {
+  backdrop-filter: none; -webkit-backdrop-filter: none;
+  box-shadow: var(--shadow-card);
+}
+.hero-main-card { background: #111a27; border: 1px solid #2b3748; }
+.hero-stats-card { background: #101722; border: 1px solid #2b3748; }
+.gradient-text { background: none; color: var(--cyan); -webkit-text-fill-color: currentColor; }
+.hero-tag, .genre-tag, .score-tag { box-shadow: none; }
+.game-card { background: #101722; border: 1px solid #293547; border-radius: 12px; overflow: hidden; }
+.game-card:hover { transform: translateY(-2px); border-color: #526477; box-shadow: var(--shadow-card-hover); }
+.card-accent-bar { height: 3px; opacity: .8; }
+.card-banner-art { background: #151f2d; }
+.card-art-emoji { filter: none; }
+.btn-primary { box-shadow: none; }
+.btn-primary:hover { box-shadow: none; filter: brightness(1.08); }
+.nav-icon-btn, .nav-pill-btn, .filter-chip { box-shadow: none; }
+.filter-chip { border-radius: 8px; }
+.filter-chip.active { box-shadow: none; }
+.mini-stat-tile { background: #141e2b; border: 1px solid #2b3748; box-shadow: none; }
+.quick-backup-box { background: #111a27; border-color: #2b3748; }
+.app-modal .modal-dialog { border-color: #354155; }
+@media (hover: hover) {
+  .game-card:hover .card-art-emoji { transform: none; }
+}

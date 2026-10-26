@@ -962,3 +962,38 @@ canvas {
     font-weight: 800;
     letter-spacing: 2px;
 }
+
+
+/* Nuevos juegos: controles sencillos, contraste claro y sin neones excesivos. */
+.mini-game { width: min(100%, 760px); margin: 0 auto; padding: 18px; color: var(--text-primary); }
+.mini-game-head, .mini-game-foot { display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; }
+.mini-game-head { margin-bottom:18px; }
+.mini-game-head h2 { font-size:1.45rem; margin-top:3px; }
+.mini-kicker { color:var(--text-secondary); font-size:.72rem; letter-spacing:.12em; font-weight:700; }
+.mini-score { color:var(--text-secondary); font-size:.9rem; }
+.mini-score strong { color:var(--text-primary); font-variant-numeric:tabular-nums; }
+.mini-instructions { color:var(--text-secondary); margin:0 0 14px; line-height:1.5; }
+.mini-game-foot { border-top:1px solid var(--border-subtle); margin-top:16px; padding-top:14px; color:var(--text-secondary); font-size:.85rem; }
+.ttt-board { display:grid; grid-template-columns:repeat(3,minmax(70px,100px)); gap:8px; justify-content:center; margin:20px auto; }
+.ttt-cell { aspect-ratio:1; border:1px solid #3b4a5e; border-radius:8px; background:#151f2d; color:#e5edf5; font:700 2.5rem var(--font-heading); cursor:pointer; }
+.ttt-cell:hover:not(:disabled) { background:#202d3e; }
+.ttt-cell.mark-x { color:#8db8d5; } .ttt-cell.mark-o { color:#d5b56d; }
+.ttt-cell.is-winner { border-color:#8db8a5; background:#1c302d; }
+.lights-board { display:grid; grid-template-columns:repeat(5,minmax(38px,64px)); gap:8px; justify-content:center; margin:20px auto; }
+.light-cell { aspect-ratio:1; border-radius:7px; border:1px solid #3b4a5e; background:#17202d; cursor:pointer; }
+.light-cell.is-on { background:#d5b56d; border-color:#e5ce91; box-shadow:inset 0 0 0 2px rgba(0,0,0,.08); }
+.reaction-zone { width:100%; min-height:280px; border:1px solid #3b4a5e; border-radius:10px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; cursor:pointer; color:#f1f5f9; background:#17202d; }
+.reaction-zone span { font-size:clamp(1.5rem,4vw,2.5rem); font-weight:750; }
+.reaction-zone small { color:inherit; opacity:.85; text-align:center; padding:0 14px; }
+.reaction-zone.state-waiting { background:#754b43; border-color:#95675d; }
+.reaction-zone.state-ready { background:#356c55; border-color:#579575; }
+.reaction-zone.state-early { background:#754b43; }
+.reaction-zone.state-result { background:#1b2938; }
+#br-canvas { display:block; width:100%; height:auto; max-height:60vh; border:1px solid #354155; border-radius:8px; background:#111a26; touch-action:pan-y; }
+@media(max-width:520px) {
+ .mini-game { padding:8px; }
+ .mini-game-head h2 { font-size:1.25rem; }
+ .reaction-zone { min-height:220px; }
+ .lights-board { gap:5px; grid-template-columns:repeat(5,minmax(36px,54px)); }
+ .ttt-board { gap:6px; grid-template-columns:repeat(3,minmax(66px,88px)); }
+}

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'juegossinwifi-v1.1.0';
+const CACHE_NAME = 'juegossinwifi-v1.2.0';
 const ASSETS_TO_CACHE = [
     './',
     './index.html',
@@ -25,7 +25,11 @@ const ASSETS_TO_CACHE = [
     './js/games/pong.js',
     './js/games/runner.js',
     './js/games/typing.js',
-    './js/games/solitaire.js'
+    './js/games/solitaire.js',
+    './js/games/breakout.js',
+    './js/games/tictactoe.js',
+    './js/games/lightsout.js',
+    './js/games/reaction.js'
 ];
 
 // Install Event

@@ -1,0 +1,9 @@
+window.LightsOut = class {
+ constructor(container){this.container=container;this.moves=0;}
+ init(){this.container.innerHTML='<section class="mini-game"><div class="mini-game-head"><div><span class="mini-kicker">LÓGICA</span><h2>Lights Out</h2></div><div class="mini-score">Movimientos <strong id="lo-moves">0</strong></div></div><p class="mini-instructions">Apaga todas las luces. Cada toque cambia la celda y sus vecinas.</p><div class="lights-board">'+Array.from({length:25},(_,i)=>'<button class="light-cell" data-i="'+i+'" aria-label="Luz '+(i+1)+'"></button>').join('')+'</div><div class="mini-game-foot"><span id="lo-status">Apaga todas las luces.</span><button class="btn btn-secondary btn-sm" id="lo-new">Nuevo tablero</button></div></section>';this.cells=[...this.container.querySelectorAll('.light-cell')];this.cells.forEach((b,i)=>b.onclick=()=>this.toggle(i));this.container.querySelector('#lo-new').onclick=()=>this.restart();this.restart();}
+ restart(){this.state=Array(25).fill(false);this.moves=0;for(let i=0;i<18;i++)this.apply(Math.floor(Math.random()*25));if(!this.state.some(Boolean))this.apply(12);this.render();this.container.querySelector('#lo-moves').textContent='0';this.container.querySelector('#lo-status').textContent='Apaga todas las luces.';}
+ apply(i){const r=Math.floor(i/5),c=i%5;[[r,c],[r-1,c],[r+1,c],[r,c-1],[r,c+1]].forEach(([y,x])=>{if(y>=0&&y<5&&x>=0&&x<5){const j=y*5+x;this.state[j]=!this.state[j];}});}
+ toggle(i){if(!this.state.some(Boolean))return;this.apply(i);this.moves++;this.render();this.container.querySelector('#lo-moves').textContent=this.moves;if(!this.state.some(Boolean)){this.container.querySelector('#lo-status').textContent='Resuelto en '+this.moves+' movimientos.';}}
+ render(){this.cells.forEach((b,i)=>{b.classList.toggle('is-on',this.state[i]);b.setAttribute('aria-pressed',String(this.state[i]));});}
+ destroy(){}
+};
