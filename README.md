@@ -1,12 +1,14 @@
+**Languages:** English | [Español](README.es.md)
+
 <div align="center">
 
 # 🕹️ JuegosSinWifi
 
-### Tu pequeña arcade, incluso cuando no tienes Internet.
+### Your little arcade, even when you don't have Internet.
 
-Una colección de **18 juegos en HTML, CSS y JavaScript**, con guardado local, controles táctiles y soporte PWA para jugar desde el navegador.
+A collection of **18 games in HTML, CSS, and JavaScript**, with local saves, touch controls, and PWA support so you can play in your browser.
 
-[**▶ Jugar ahora**](https://ericsnet.github.io/JuegosSinWifi/) · [Ver el código](https://github.com/ericsnet/JuegosSinWifi) · [Informar de un problema](https://github.com/ericsnet/JuegosSinWifi/issues)
+[**▶ Play now**](https://ericsnet.github.io/JuegosSinWifi/) · [View the code](https://github.com/ericsnet/JuegosSinWifi) · [Report an issue](https://github.com/ericsnet/JuegosSinWifi/issues)
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/ericsnet/JuegosSinWifi?style=flat-square)
 ![GitHub repo size](https://img.shields.io/github/repo-size/ericsnet/JuegosSinWifi?style=flat-square)
@@ -17,95 +19,95 @@ Una colección de **18 juegos en HTML, CSS y JavaScript**, con guardado local, c
 
 ---
 
-## 🎮 Juegos incluidos
+## 🎮 Included games
 
-| Juego | ¿De qué va? |
+| Game | What is it about? |
 |---|---|
-| 🐍 **Cyber Snake Neon** | Serpiente arcade con poderes y aceleración. |
-| 🧱 **TetroBlocks Neon** | Bloques, rotaciones SRS, retención de piezas y combos. |
-| 🚀 **Space Defender** | Combate espacial con oleadas, jefes y mejoras. |
-| 🐦 **Flappy Cyber** | Vuelo y esquiva de obstáculos. |
-| 🔢 **2048 Fusion** | Combina números, deshaz movimientos y supera récords. |
-| 💣 **Buscaminas Deluxe** | Tres dificultades, banderas y primer clic seguro. |
-| 🧠 **Memory Matrix** | Encuentra parejas con distintos temas y tableros. |
-| 🔢 **Sudoku Master** | Cuatro dificultades, notas y pistas. |
-| 🔴 **Conecta 4 Neón** | Juega contra la IA o contra otra persona en el mismo dispositivo. |
-| 🔤 **El Ahorcado Pro** | Palabras en español organizadas por categorías. |
-| 🏓 **Cyber Pong** | Pong con efecto y modos para uno o dos jugadores. |
-| 🦖 **Neon Dino Runner** | Carrera infinita con saltos, agachadas y ciclo día/noche. |
-| ⌨️ **Speed Typer** | Practica mecanografía y reflejos. |
-| 🃏 **Solitario Klondike** | Modos de robar una o tres cartas, deshacer y autocompletar. |
-| 🧱 **Breakout** | Rompe bloques con una pala y una pelota, con controles táctiles y teclado. |
-| ⭕ **Tres en raya** | Clásico de estrategia para dos personas en el mismo dispositivo. |
-| 💡 **Lights Out** | Apaga todas las luces con el menor número de movimientos. |
-| ⏱️ **Prueba de reacción** | Mide tu tiempo de respuesta con una prueba rápida de reflejos. |
+| 🐍 **Cyber Snake Neon** | Arcade snake with power-ups and acceleration. |
+| 🧱 **TetroBlocks Neon** | Blocks, SRS rotations, piece hold, and combos. |
+| 🚀 **Space Defender** | Space combat with waves, bosses, and upgrades. |
+| 🐦 **Flappy Cyber** | Fly and dodge obstacles. |
+| 🔢 **2048 Fusion** | Combine numbers, undo moves, and beat records. |
+| 💣 **Buscaminas Deluxe** | Three difficulty levels, flags, and a safe first click. |
+| 🧠 **Memory Matrix** | Find matching pairs across different themes and boards. |
+| 🔢 **Sudoku Master** | Four difficulty levels, notes, and hints. |
+| 🔴 **Conecta 4 Neón** | Play against the AI or another person on the same device. |
+| 🔤 **El Ahorcado Pro** | Spanish words organized by category. |
+| 🏓 **Cyber Pong** | Pong with effects and one- or two-player modes. |
+| 🦖 **Neon Dino Runner** | Endless runner with jumps, ducking, and a day/night cycle. |
+| ⌨️ **Speed Typer** | Practice typing and reflexes. |
+| 🃏 **Solitario Klondike** | Draw-one or draw-three modes, undo, and auto-complete. |
+| 🧱 **Breakout** | Break blocks with a paddle and ball, using touch or keyboard controls. |
+| ⭕ **Tres en raya** | A classic strategy game for two people on the same device. |
+| 💡 **Lights Out** | Turn off all the lights in as few moves as possible. |
+| ⏱️ **Prueba de reacción** | Measure your response time with a quick reflex test. |
 
-## ✨ Características
+## ✨ Features
 
-- **🌐 Online y offline:** juega desde el navegador; el Service Worker permite almacenar recursos para usarlos sin conexión después de la carga inicial.
-- **📱 Adaptado a móviles:** controles táctiles y de teclado.
-- **📲 Instalable:** compatible con el enfoque de aplicación web progresiva (PWA).
-- **💾 Guardado local:** conserva el perfil, las estadísticas, los récords y los logros en el dispositivo.
-- **☁️ Sincronización opcional con GitHub Gists:** permite transferir el progreso entre dispositivos.
-- **📦 Copias de seguridad:** exporta e importa partidas mediante archivos JSON.
-- **🔊 Audio generado en el navegador:** efectos y música sintetizados con Web Audio API, sin descargar archivos de audio.
-- **🏆 Progresión:** experiencia, niveles y logros.
+- **🌐 Online and offline:** play in your browser; the Service Worker can store resources for offline use after the initial load.
+- **📱 Mobile-friendly:** touch and keyboard controls.
+- **📲 Installable:** supports the progressive web app (PWA) approach.
+- **💾 Local saves:** keeps your profile, stats, records, and achievements on your device.
+- **☁️ Optional GitHub Gist sync:** transfer progress between devices.
+- **📦 Backups:** export and import game saves as JSON files.
+- **🔊 Browser-generated audio:** sound effects and music synthesized with the Web Audio API, with no audio files to download.
+- **🏆 Progression:** experience, levels, and achievements.
 
-## 🚀 Cómo jugar
+## 🚀 How to play
 
-### Opción 1: abrir la página
+### Option 1: Open the website
 
-Entra en **[ericsnet.github.io/JuegosSinWifi](https://ericsnet.github.io/JuegosSinWifi/)**. Para jugar sin conexión, abre la página primero con Internet y deja que se descarguen y almacenen los recursos necesarios.
+Go to **[ericsnet.github.io/JuegosSinWifi](https://ericsnet.github.io/JuegosSinWifi/)**. To play offline, first open the page with Internet access and let the necessary resources download and be stored.
 
-### Opción 2: ejecutar una copia local
+### Option 2: Run a local copy
 
-Clona el repositorio:
+Clone the repository:
 
 ```bash
 git clone https://github.com/ericsnet/JuegosSinWifi.git
 cd JuegosSinWifi
 ```
 
-Inicia un servidor local con una de estas opciones:
+Start a local server with one of these options:
 
 ```bash
 # Python 3
 python3 -m http.server 8080
 ```
 
-O, si tienes Node.js instalado:
+Or, if you have Node.js installed:
 
 ```bash
 npx serve -l 8080 -s .
 ```
 
-Después abre [http://localhost:8080](http://localhost:8080).
+Then open [http://localhost:8080](http://localhost:8080).
 
-> **Nota:** abrir `index.html` directamente puede permitir jugar, pero los Service Workers y algunas funciones PWA requieren un origen HTTP/HTTPS.
+> **Note:** opening `index.html` directly may let you play, but Service Workers and some PWA features require an HTTP/HTTPS origin.
 
-## ☁️ Guardado en la nube con GitHub
+## ☁️ Cloud saves with GitHub
 
-La sincronización con Gists es opcional. Si prefieres no conectar GitHub, puedes seguir usando el guardado local y las copias JSON.
+Gist sync is optional. If you prefer not to connect GitHub, you can keep using local saves and JSON backups.
 
-1. En GitHub, crea un **Personal Access Token (classic)** desde *Settings → Developer settings → Personal access tokens → Tokens (classic)*.
-2. Concede únicamente el permiso **`gist`**.
-3. Introduce el token en la sección de sincronización de JuegosSinWifi.
-4. Usa las opciones para subir o descargar la partida.
+1. On GitHub, create a **Personal Access Token (classic)** from *Settings → Developer settings → Personal access tokens → Tokens (classic)*.
+2. Grant only the **`gist`** permission.
+3. Enter the token in the JuegosSinWifi sync section.
+4. Use the options to upload or download your save.
 
-**Seguridad:** el token se guarda en el almacenamiento local del navegador. Usa esta función solo en dispositivos de confianza, no compartas el token y revócalo desde GitHub si crees que se ha expuesto. No concedas permisos adicionales a `gist`.
+**Security:** the token is stored in your browser's local storage. Use this feature only on trusted devices, do not share the token, and revoke it on GitHub if you think it has been exposed. Do not grant permissions beyond `gist`.
 
-## 🧰 Tecnologías
+## 🧰 Technologies
 
-- HTML5, CSS3 y JavaScript.
-- Canvas y DOM para la interfaz y los juegos.
-- Web Audio API para sonido generado en tiempo real.
-- LocalStorage para datos locales.
-- GitHub Gists API para la sincronización opcional.
-- Service Worker y Web App Manifest para las funciones PWA.
+- HTML5, CSS3, and JavaScript.
+- Canvas and DOM for the interface and games.
+- Web Audio API for sound generated in real time.
+- LocalStorage for local data.
+- GitHub Gists API for optional synchronization.
+- Service Worker and Web App Manifest for PWA features.
 
-No se necesita un proceso de compilación para ejecutar el proyecto.
+No build process is needed to run the project.
 
-## 📁 Estructura del proyecto
+## 📁 Project structure
 
 ```text
 JuegosSinWifi/
@@ -146,27 +148,27 @@ JuegosSinWifi/
 └── README.md
 ```
 
-## 🤝 Contribuir
+## 🤝 Contributing
 
-¿Has encontrado un error o tienes una idea para mejorar el proyecto?
+Found a bug or have an idea to improve the project?
 
-1. Abre un [issue](https://github.com/ericsnet/JuegosSinWifi/issues) describiendo el problema o la propuesta.
-2. Si quieres aportar código, crea un fork y prepara una pull request con los cambios.
+1. Open an [issue](https://github.com/ericsnet/JuegosSinWifi/issues) describing the problem or suggestion.
+2. If you want to contribute code, fork the repository and prepare a pull request with your changes.
 
-Procura comprobar tanto el juego afectado como el funcionamiento en móvil y sin conexión.
+Please test the affected game as well as how it works on mobile and offline.
 
-## 📄 Licencia
+## 📄 License
 
-Copyright (c) 2026 **ericsnet**. Todos los derechos reservados.
+Copyright (c) 2026 **ericsnet**. All rights reserved.
 
-Este proyecto es software propietario. No se concede permiso para copiar, modificar, distribuir o crear obras derivadas sin autorización escrita previa, salvo lo permitido por la ley aplicable. Consulta el archivo [LICENSE](https://github.com/ericsnet/JuegosSinWifi/blob/main/LICENSE).
+This project is proprietary software. No permission is granted to copy, modify, distribute, or create derivative works without prior written authorization, except as permitted by applicable law. See the [LICENSE](https://github.com/ericsnet/JuegosSinWifi/blob/main/LICENSE) file.
 
 ---
 
 <div align="center">
 
-**[▶ Jugar a JuegosSinWifi](https://ericsnet.github.io/JuegosSinWifi/)**
+**[▶ Play JuegosSinWifi](https://ericsnet.github.io/JuegosSinWifi/)**
 
-Hecho para jugar, también cuando no hay Wi-Fi.
+Made for playing, even when there's no Wi-Fi.
 
 </div>
